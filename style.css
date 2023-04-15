@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Overpass&display=swap");
+
+:root {
+  --grain: #d7cec7;
+  --blackboard: #565656;
+  --oxblood: #76323f;
+  --tan: #c09f80;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.04rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+i {
+  color: var(--blackboard);
+}
+
+body {
+  background-color: var(--grain);
+  color: var(--blackboard);
+  min-width: 100%;
+  min-height: 100vh;
+  background: url("https://media.discordapp.net/attachments/1085644871508971680/1096815460089090169/always-grey.png?width=43&height=43");
+}
+
+header {
+  width: 100%;
+}
+
+.top-header {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.right-header i {
+  margin-left: -5px;
+}
+
+.right-header .product-search {
+  width: 70%;
+}
+
+.left-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.left-header nav ul {
+  display: flex;
+  list-style: none;
+  column-gap: 15px;
+}
+
+.left-header nav ul li a {
+  text-decoration: none;
+  color: var(--blackboard);
+}
+
+button {
+  padding: 7px;
+  color: var(--blackboard);
+  border-radius: 4px;
+  border: 3px var(--oxblood) solid;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--oxblood);
+  color: white;
+}
+
+button.icon-button {
+  border: none;
+}
+
+button.icon-button:hover {
+  background-color: transparent;
+  color: var(--blackboard);
+}
+
+input {
+  border: 1px solid rgb(174, 174, 174);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.message-header {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.375);
+  color: white;
+}
+
+.message-header p {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+section.hero {
+  background: url("https://cdn.midjourney.com/c9be7a09-9c71-4161-aaef-591e59a7788b/grid_0.png");
+  width: 100%;
+  height: 270px;
+  background-size: cover;
+}
+
+@media screen and (min-width: 600px) {
+  section.hero {
+    height: 540px;
+  }
+}
+
+section.categories,
+section.featured {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+section .h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.category-button {
+  width: 100%;
+  background-color: var(--blackboard);
+  border: white 1px solid;
+  border-radius: 0;
+  padding: 20px;
+  box-shadow: 2px 0px 22px -3px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 2px 0px 22px -3px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 2px 0px 22px -3px rgba(0, 0, 0, 0.57);
+}
+
+.category-button a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.category-button.marvel {
+  background-image: url("https://media.discordapp.net/attachments/1085644871508971680/1096826156403146883/ezgif.com-optimize_2.gif?width=625&height=260");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+.category-button.marvel a {
+  color: white;
+}
+
+.category-button.dc a {
+  color: black;
+}
+
+.category-button.anime a {
+  color: purple;
+}
+
+.category-button.star-wars a {
+  color: gold;
+}
+
+.category-button.anime {
+  background-image: url("https://media.discordapp.net/attachments/1085644871508971680/1096826156784832512/ezgif.com-optimize_3.gif?width=600&height=333");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+.category-button.dc {
+  background-image: url("https://media.discordapp.net/attachments/1085644871508971680/1096829112296935465/ezgif.com-optimize_5.gif?width=625&height=352");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+.category-button.star-wars {
+  background-image: url("https://media.discordapp.net/attachments/1085644871508971680/1096829111852343316/ezgif.com-optimize_4.gif?width=625&height=263");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+.category-button:hover {
+  background-color: black;
+}
+
+.featured-grid {
+  display: grid;
+  padding: 5px;
+  gap: 10px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  background-color: white;
+  border: red solid 2px;
+  box-shadow: 2px 0px 22px -3px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 2px 0px 22px -3px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 2px 0px 22px -3px rgba(0, 0, 0, 0.57);
+}
+
+@media only screen and (max-width: 700px) {
+  .featured-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
