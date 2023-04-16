@@ -36,48 +36,108 @@ body {
 }
 
 header {
-  width: 100%;
-}
-
-.top-header {
   background-color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
 }
 
-.right-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
-}
-
-.right-header i {
-  margin-left: -5px;
-}
-
-.right-header .product-search {
-  width: 70%;
-}
-
-.left-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 400px;
-}
-
-.left-header nav ul {
-  display: flex;
+li {
   list-style: none;
-  column-gap: 15px;
 }
 
-.left-header nav ul li a {
-  text-decoration: none;
+a {
   color: var(--blackboard);
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+}
+
+.nav-link:hover {
+  color: var(--oxblood);
+}
+
+.nav-item.commerce-action a {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.commerce-action.wishlist a img {
+  width: 20px;
+  height: 20px;
+}
+
+.commerce-action.cart a img {
+  width: 40px;
+  height: 20px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--blackboard);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
 }
 
 button {
@@ -136,12 +196,13 @@ section.hero {
 }
 
 section.categories,
-section.featured {
-  margin-top: 10px;
+section.featured,
+section.about {
+  margin: 2rem 0;
   padding: 10px;
 }
 
-section .h2 {
+section h2 {
   text-align: center;
   margin-bottom: 20px;
 }
