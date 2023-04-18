@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Overpass&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.04rem;
+}
+
+::selection {
+  background-color: gold;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: block;
+  background: url("https://media.discordapp.net/attachments/1085644871508971680/1097570295260389407/terryc_toys_doodle_style_yellow_8019458a-59bf-4e82-860d-49cb6ee8ac0c.png?width=677&height=677");
+}
+
+.img-container {
+  margin: 1rem auto;
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 13px 1px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 1px 13px 1px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 1px 13px 1px rgba(0, 0, 0, 0.57);
+}
+
+.img-container img {
+  width: 120px;
+  height: 120px;
+  margin-left: -7px;
+  margin-top: -11px;
+}
+
+input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 6px;
+  border: 1px solid gainsboro;
+}
+
+form {
+  margin: auto;
+  max-width: 500px;
+  padding: 4rem;
+  --parent-padding: 4rem;
+  box-shadow: 0px 1px 13px 1px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 1px 13px 1px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 1px 13px 1px rgba(0, 0, 0, 0.57);
+  position: relative;
+  border-radius: 4px;
+  background-color: white;
+  height: 80vh;
+}
+
+form > * {
+  display: block;
+}
+
+@media only screen and (max-width: 500px) {
+  form {
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    padding: 2rem;
+    --parent-padding: 2rem;
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    display: block;
+  }
+}
+
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.inputs > * {
+  display: block;
+}
+
+.form-control label {
+  display: none;
+  font-size: 1rem;
+  color: red;
+  font-weight: lighter;
+  opacity: 70%;
+}
+
+.forgot {
+  border: none;
+  background: none;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: calc(var(--parent-padding) / 2);
+  width: calc(100% - var(--parent-padding) * 2);
+  padding: 0.5rem;
+  border: none;
+  background-color: gold;
+  cursor: pointer;
+}
