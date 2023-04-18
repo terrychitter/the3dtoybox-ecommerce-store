@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error 404 - Page Not Found</title>
+    <script
+      src="https://kit.fontawesome.com/805e2252e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Overpass&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Overpass", sans-serif;
+        font-size: 1.04rem;
+        color: white;
+      }
+      body {
+        background: url("https://media.discordapp.net/attachments/1085644871508971680/1097570295260389407/terryc_toys_doodle_style_yellow_8019458a-59bf-4e82-860d-49cb6ee8ac0c.png?width=677&height=677");
+        height: 100vh;
+        width: 100%;
+        display: flex;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: -1;
+      }
+
+      img {
+        height: 500px;
+        width: 500px;
+        -webkit-filter: drop-shadow(1px 1px 0 white)
+          drop-shadow(-1px -1px 0 white);
+        filter: drop-shadow(0px 0px 0px #ffffff);
+      }
+
+      h1 {
+        font-family: "Josefin Sans", sans-serif;
+        text-transform: uppercase;
+        font-size: 4rem;
+      }
+
+      main {
+        margin: auto;
+        display: grid;
+        max-width: 900px;
+        min-height: 50%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+      }
+
+      button {
+        color: white;
+        background: #ffd900;
+        padding: 1rem;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        margin: 20px auto;
+      }
+
+      button:hover {
+        background: #edc900;
+        text-decoration: none;
+      }
+
+      button a p {
+        margin-top: 0.4rem;
+        font-size: 1.2rem;
+      }
+
+      @media only screen and (min-width: 900px) {
+        .content {
+          margin-top: 100px;
+        }
+      }
+
+      @media only screen and (max-width: 900px) {
+        main {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
+
+        h1,
+        p {
+          text-align: center;
+        }
+
+        body::before {
+          height: 100%;
+        }
+      }
+
+      @media only screen and (max-width: 500px) {
+        img {
+          width: 250px;
+          height: 250px;
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img
+        src="https://media.discordapp.net/attachments/1085644871508971680/1097878753037799424/my-image.png?width=662&height=662"
+        alt="two adorable kittens"
+      />
+      <div class="content">
+        <h1>404 Page Not Found</h1>
+        <p>Now, which one of you ate it?!</p>
+        <button>
+          <a href="/index.html">
+            <i class="fa-solid fa-house"></i>
+            <p>Head Home</p></a
+          >
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
