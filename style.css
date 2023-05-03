@@ -203,8 +203,7 @@ section.hero {
   }
 }
 
-section.categories,
-section.about {
+section.categories {
   margin: 2rem 0;
   padding: 10px;
 }
@@ -307,6 +306,10 @@ section.new-products {
   width: 100%;
   padding: 0 0.5rem;
   height: auto;
+}
+
+section.featured-products {
+  margin-bottom: 1.5rem;
 }
 
 .product-scroller::-webkit-scrollbar {
@@ -437,23 +440,46 @@ button.add-to-cart {
   color: white;
 }
 
+.footer-group {
+  background-color: black;
+}
+
+section.social-media {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.social-media-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-media-group > a > i {
+  color: white;
+  cursor: pointer;
+}
+
 section.about {
-  margin: 2rem;
+  padding-top: 2rem;
+  color: white;
 }
 
 section.about > p {
+  margin-inline: 2rem;
   text-align: justify;
 }
 
-@media only screen and (max-width: 700px) {
-  .featured-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
+footer {
+  padding: 2rem 2rem 0 2rem;
+  color: white;
 }
 
-@media only screen and (max-width: 500px) {
-  .featured-grid {
-    grid-template-columns: 1fr;
-  }
+footer > hr {
+  margin-bottom: 1rem;
 }
