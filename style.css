@@ -7,6 +7,10 @@
   --tan: #c09f80;
 }
 
+::selection {
+  background-color: gold;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,11 +32,21 @@ i {
 }
 
 body {
-  background-color: var(--grain);
-  color: var(--blackboard);
   min-width: 100%;
+  position: relative;
   min-height: 100vh;
-  background: url("https://media.discordapp.net/attachments/1085644871508971680/1096815460089090169/always-grey.png?width=43&height=43");
+}
+
+body::before {
+  content: "";
+  background: url("https://media.discordapp.net/attachments/1085644871508971680/1103343395163885578/terryc_visual_effects_doodle_style_minimalistic_white_c3e62385-d02e-485b-b828-8d20e351f2c2.png?width=677&height=677");
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+  z-index: -999;
 }
 
 header {
@@ -285,18 +299,7 @@ section h2 {
 }
 
 .featured-new-container {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-}
-@media only screen and (max-width: 700px) {
-  .featured-new-container {
-    flex-direction: column;
-  }
-
-  section.new-products {
-    margin-top: 2rem;
-  }
+  margin: auto;
 }
 
 section.featured-products,
@@ -306,26 +309,63 @@ section.new-products {
   height: auto;
 }
 
-.product-grid {
+.product-scroller::-webkit-scrollbar {
+  padding: 1rem;
+  height: 1rem;
+}
+
+.product-scroller::-webkit-scrollbar-track {
+  background-color: rgb(255, 238, 145);
+  border-radius: 100vw;
+}
+
+.product-scroller::-webkit-scrollbar-thumb {
+  background-color: gold;
+  cursor: pointer;
+  border-radius: 100vw;
+}
+
+.product-scroller {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
+  margin: 0 2.5%;
+  padding-bottom: 10px;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 40%;
+  overflow-x: auto;
+  scroll-snap-type: inline mandatory;
+  grid-template-rows: min-content;
+  overscroll-behavior-inline: contain;
 }
 
 .product-card {
+  scroll-snap-align: start;
   text-align: center;
   position: relative;
-  width: 100%;
-  max-width: 280px;
-  height: 300px;
+  aspect-ratio: 9 / 17;
+  max-width: 100%;
   background-color: white;
   box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.35);
+}
+
+@media screen and (max-width: 400px) {
+  .product-card {
+    aspect-ratio: 9/14;
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .product-card {
+    aspect-ratio: 9/14;
+    min-height: 300px;
+  }
+
+  .product-scroller {
+    grid-auto-columns: 25%;
+  }
 }
 
 .product-card img {
