@@ -164,7 +164,7 @@ main > * {
 
 .categories > ul > li {
   display: flex;
-  padding: 5px;
+  padding: 0.5rem;
   width: 100%;
   justify-content: space-between;
   align-items: center;
