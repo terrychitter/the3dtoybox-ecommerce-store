@@ -6,6 +6,8 @@
   --oxblood: #76323f;
   --tan: #c09f80;
   --banana: rgb(252, 239, 169);
+  --light-gray: rgb(233, 233, 233);
+  --gray: rgb(212, 212, 212);
 }
 
 ::selection {
@@ -58,7 +60,7 @@ main {
   justify-items: center;
   align-items: center;
   grid-template-columns: 1.25fr 1fr 1.15fr;
-  grid-template-rows: 0.5fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr auto auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: "search search search" "categories sales sales" "brands brands news" "new new news" "featured featured news" "mini-figures mini-figures news" "Collectibles Collectibles news" "keychains keychains news" "home-decor home-decor news" "pins pins news" "toys toys news";
 }
 
@@ -69,18 +71,85 @@ main {
 }
 
 main > * {
+  background-color: white;
+  border: 1px solid rgb(202, 202, 202);
   padding: 0.7rem;
   width: 100%;
   height: 100%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
 }
 
 .search {
   grid-area: search;
 }
 
+.search {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+  .search {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.searchbar {
+  width: 100%;
+  max-width: 400px;
+  display: inline-flex;
+}
+
+.searchbar > input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid gold;
+  outline: none;
+  transition: box-shadow 0.25s;
+  border-radius: 5px 0 0 5px;
+}
+
+.searchbar > input:focus {
+  box-shadow: 0 0 2px var(--banana);
+  border: 1px solid gold;
+}
+
+.searchbar > input::placeholder {
+  color: rgb(94, 94, 94);
+}
+
+.searchbar > button {
+  width: 40px;
+  background: gold;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.searchbar > button > i {
+  color: var(--blackboard);
+}
+
+.see-all {
+  background-color: gold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+}
+
 .categories {
   grid-area: categories;
-  background-color: gold;
 }
 
 .categories > h2,
@@ -103,12 +172,12 @@ main > * {
 }
 
 .categories > ul > li:nth-child(odd) {
-  background-color: var(--banana);
+  background-color: var(--gray);
   transition: 0.3s;
 }
 
 .categories > ul > li:nth-child(even) {
-  background-color: rgb(255, 247, 198);
+  background-color: var(--light-gray);
   transition: 0.3s;
 }
 
@@ -184,7 +253,6 @@ main > * {
 }
 
 .promotional-slide > img {
-  border: solid 1px gold;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -234,7 +302,7 @@ main > * {
 @media only screen and (max-width: 700px) {
   main {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1.7fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1.7fr 2fr auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
       "search"
       "categories"
@@ -258,74 +326,6 @@ button {
   background-color: gold;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.search {
-  width: 100%;
-  height: auto;
-  background-color: gold;
-  display: flex;
-  gap: 1rem;
-}
-
-@media screen and (max-width: 400px) {
-  .search {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-.searchbar {
-  width: 100%;
-  max-width: 400px;
-  display: inline-flex;
-}
-
-.searchbar > input {
-  flex-grow: 1;
-  padding: 5px;
-  border: none;
-  outline: none;
-  transition: box-shadow 0.25s;
-  border-radius: 5px 0 0 5px;
-}
-
-.searchbar > input:focus {
-  box-shadow: 0 0 2px rgb(94, 94, 94);
-  border: 1px solid var(--banana);
-}
-
-.searchbar > input:hover {
-  border: none;
-}
-
-.searchbar > input::placeholder {
-  color: rgb(94, 94, 94);
-}
-
-.searchbar > button {
-  width: 40px;
-  background: var(--banana);
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  user-select: none;
-}
-
-.searchbar > button > i {
-  color: var(--blackboard);
-}
-
-.see-all {
-  background-color: var(--banana);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 150px;
 }
 
 .scroller {
@@ -354,16 +354,16 @@ button {
 
 .scroller::-webkit-scrollbar {
   padding: 1rem;
-  height: 1rem;
+  height: 0.5rem;
 }
 
 .scroller::-webkit-scrollbar-track {
-  background-color: rgb(255, 238, 145);
+  background-color: var(--light-gray);
   border-radius: 100vw;
 }
 
 .scroller::-webkit-scrollbar-thumb {
-  background-color: gold;
+  background-color: var(--gray);
   cursor: pointer;
   border-radius: 100vw;
 }
