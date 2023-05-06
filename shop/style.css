@@ -99,15 +99,18 @@ main > * {
   }
 }
 
+.search-form {
+  width: 100%;
+}
+
 .searchbar {
   width: 100%;
-  max-width: 400px;
   display: inline-flex;
 }
 
 .searchbar > input {
   flex-grow: 1;
-  padding: 5px;
+  padding: 0.5rem;
   border: 1px solid gold;
   outline: none;
   transition: box-shadow 0.25s;
@@ -145,7 +148,7 @@ main > * {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 150px;
+  width: 110px;
 }
 
 .categories {
@@ -321,7 +324,7 @@ main > * {
 }
 
 button {
-  padding: 5px;
+  padding: 5px 10px;
   border: none;
   background-color: gold;
   border-radius: 5px;
