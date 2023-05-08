@@ -55,7 +55,7 @@ body::before {
 main {
   margin: 0 auto;
   padding-inline: 1rem;
-  gap: 0.7rem;
+  gap: 1.5rem;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -71,8 +71,9 @@ main {
 }
 
 main > * {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
   padding: 0.7rem;
   width: 100%;
   height: 100%;
@@ -190,12 +191,21 @@ section > h2 {
 }
 
 .categories > ul > li.new-category {
-  background: rgb(246, 0, 8);
-  background: linear-gradient(
-    210deg,
-    rgba(246, 0, 8, 1) 0%,
-    rgba(255, 215, 0, 1) 100%
-  );
+  background: linear-gradient(285deg, #f60008, #ffd700, #89eb7f, #a361db);
+  background-size: 240% 240%;
+  animation: gradient-animation 12s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .categories > ul > li.new-category * {
