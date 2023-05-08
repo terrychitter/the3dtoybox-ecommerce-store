@@ -202,19 +202,6 @@ section > h2 {
   color: white;
 }
 
-.categories > ul > li.featured-category {
-  background: rgb(201, 97, 255);
-  background: linear-gradient(
-    210deg,
-    rgba(201, 97, 255, 1) 0%,
-    rgba(255, 215, 0, 1) 100%
-  );
-}
-
-.categories > ul > li.featured-category * {
-  color: white;
-}
-
 .categories > ul > li > a {
   text-decoration: none;
   color: black;
