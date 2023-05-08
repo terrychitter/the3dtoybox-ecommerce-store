@@ -395,7 +395,7 @@ button.add-to-cart {
 @media only screen and (max-width: 800px) {
   main {
     grid-template-columns: 100%;
-    grid-template-rows: auto auto auto auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto;
     grid-template-areas:
       "search"
       "categories"
@@ -431,7 +431,7 @@ button {
 
 .scroller {
   display: grid;
-  gap: 0.5rem;
+  gap: 1rem;
   grid-auto-flow: column;
   grid-auto-columns: 25%;
   overflow-x: auto;
@@ -464,7 +464,7 @@ button {
 }
 
 .product-scroller {
-  grid-auto-columns: 45%;
+  grid-auto-columns: 60%;
   padding-inline: 5px;
 }
 
@@ -472,4 +472,52 @@ button {
   .product-scroller {
     grid-auto-columns: 35%;
   }
+}
+
+.footer-group {
+  background-color: black;
+}
+
+section.social-media {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.social-media-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-media-group > a > i {
+  color: white;
+  cursor: pointer;
+}
+
+section.about {
+  padding-top: 2rem;
+  color: white;
+}
+
+section.about h2 {
+  text-align: center;
+}
+
+section.about > p {
+  margin-inline: 2rem;
+  text-align: justify;
+}
+
+footer {
+  padding: 2rem 2rem 0 2rem;
+  color: white;
+}
+
+footer > hr {
+  margin-bottom: 1rem;
 }
