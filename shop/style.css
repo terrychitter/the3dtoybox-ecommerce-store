@@ -189,6 +189,32 @@ section > h2 {
   background-color: white;
 }
 
+.categories > ul > li.new-category {
+  background: rgb(246, 0, 8);
+  background: linear-gradient(
+    210deg,
+    rgba(246, 0, 8, 1) 0%,
+    rgba(255, 215, 0, 1) 100%
+  );
+}
+
+.categories > ul > li.new-category * {
+  color: white;
+}
+
+.categories > ul > li.featured-category {
+  background: rgb(201, 97, 255);
+  background: linear-gradient(
+    210deg,
+    rgba(201, 97, 255, 1) 0%,
+    rgba(255, 215, 0, 1) 100%
+  );
+}
+
+.categories > ul > li.featured-category * {
+  color: white;
+}
+
 .categories > ul > li > a {
   text-decoration: none;
   color: black;
