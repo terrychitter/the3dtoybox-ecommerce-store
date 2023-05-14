@@ -118,6 +118,7 @@
     </style>
 </head>
 <header>
+  <?php session_start(); ?>
       <nav class="navbar">
         <a href="#" class="nav-branding"><img width="90px" height="90px" src="https://media.discordapp.net/attachments/1085644871508971680/1097857675913605220/logo4_18_22544.png?width=677&height=677" alt=""></a>
         <ul class="nav-menu">
@@ -125,7 +126,7 @@
             <a href="#" class="nav-link">My Account</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
+            <a href="/" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
             <a href="/shop/shop.php" class="nav-link">Shop</a>

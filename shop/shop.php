@@ -13,7 +13,7 @@
         src="https://kit.fontawesome.com/805e2252e6.js"
         crossorigin="anonymous"
       ></script>
-      <?php include "../header/header.php" ?> 
+      <?php include "../header/header.php"; ?>
       <main>
         <div id="search" class="search">
           <form action="" method="get" class="search-form">
