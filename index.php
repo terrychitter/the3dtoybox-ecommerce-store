@@ -12,38 +12,7 @@
     <title>The 3DToyBox</title>
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <a href="#" class="nav-branding"><img width="90px" height="90px" src="https://media.discordapp.net/attachments/1085644871508971680/1097857675913605220/logo4_18_22544.png?width=677&height=677" alt=""></a>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#" class="nav-link">My Account</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="/shop/shop.html" class="nav-link">Shop</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item commerce-action wishlist">
-            <a href="#" class="nav-link">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1096945276733902898/ezgif.com-optimize_7.gif">Wishlist</a>
-          </li>
-          <li class="nav-item commerce-action cart">
-            <a href="#" class="nav-link"></i>
-              <img src="https://media3.giphy.com/media/wsTyMcJnYxnSyaGleS/giphy.gif?cid=ecf05e478e7awupm0e0062f071mwde6ut0y0mbvbqb7irfsr&rid=giphy.gif&ct=s">Cart</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
-    </header>
+    <?php include "header/header.php" ?>
     <section class="hero"></section>
     <section class="categories">
       <h2>Search Categories</h2>
@@ -291,36 +260,6 @@
         <button class="see-more">See More<i class="fa-solid fa-angles-right"></i></button>
       </section>
     </div>
-    <div class="footer-group">
-      <section class="social-media">
-        <p>Follow Us on Social Media</p>
-        <div class="social-media-group">
-          <a href=""><i class="fa-brands fa-instagram fa-xl"></i></a>
-          <a href=""><i class="fa-brands fa-twitter fa-xl"></i></a>
-          <a href=""><i class="fa-brands fa-facebook fa-xl"></i></a>
-        </div>
-      </section>
-      <section class="about">
-        <h2>About Us</h2>
-        <p>
-          Welcome to The3DToyBox, a 3D printing business that specializes in
-          creating unique and customizable collectibles. Our mini collectables are
-          carefully crafted with precision and attention to detail to provide our
-          customers with a one-of-a-kind product. With a growing demand for our
-          products, we have expanded our platform to include an e-commerce
-          website, allowing us to offer a wider range of products to our
-          customers. Our website serves as the primary platform for browsing and
-          purchasing our products, as well as interacting with our business. At
-          The3DToyBox, we are committed to providing high-quality products and
-          exceptional customer service. Thank you for choosing us as your go-to
-          source for mini collectables.
-        </p>
-      </section>
-      <footer>
-        <hr>
-        The3DToyBox©2023
-      </footer>
-    </div>
-    <script src="/script.js"></script>
+    <?php include "footer/footer.php" ?>
   </body>
 </html>

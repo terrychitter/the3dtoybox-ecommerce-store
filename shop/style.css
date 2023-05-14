@@ -53,7 +53,7 @@ body::before {
 }
 
 main {
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
   padding-inline: 1rem;
   gap: 1.5rem;
   display: grid;
@@ -495,52 +495,4 @@ button {
   .product-scroller {
     grid-auto-columns: 35%;
   }
-}
-
-.footer-group {
-  background-color: black;
-}
-
-section.social-media {
-  margin-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.social-media-group {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-media-group > a > i {
-  color: white;
-  cursor: pointer;
-}
-
-section.about {
-  padding-top: 2rem;
-  color: white;
-}
-
-section.about h2 {
-  text-align: center;
-}
-
-section.about > p {
-  margin-inline: 2rem;
-  text-align: justify;
-}
-
-footer {
-  padding: 2rem 2rem 0 2rem;
-  color: white;
-}
-
-footer > hr {
-  margin-bottom: 1rem;
 }

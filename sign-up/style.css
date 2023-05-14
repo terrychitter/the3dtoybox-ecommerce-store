@@ -120,3 +120,11 @@ button[type="submit"] {
   background-color: gold;
   cursor: pointer;
 }
+
+.create {
+  color: rgb(194, 165, 2);
+}
+
+.create:visited {
+  color: rgb(194, 165, 2);
+}

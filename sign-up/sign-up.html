@@ -17,28 +17,18 @@
       />
     </div>
     <form action="POST">
-      <h1>Sign In</h1>
-      <p>Create your account tobe able to purchase products from our site.</p>
+      <h1>Sign Up</h1>
+      <p>Create your account to be able to purchase products from our site.</p>
       <div class="inputs">
         <div class="form-control">
           <input
             type="text"
-            name="first-name"
-            id="first-name"
-            placeholder="First Name *"
+            name="username"
+            id="username"
+            placeholder="Username *"
             required
           />
           <label for="first-name">Error Message</label>
-        </div>
-        <div class="form-control">
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            placeholder="Last Name *"
-            required
-          />
-          <label for="last-name">Error Message</label>
         </div>
         <div class="form-control">
           <input
@@ -71,6 +61,10 @@
           <label for="password">Error Message</label>
         </div>
       </div>
+      <p>
+        Already have an account?
+        <a href="/sign-in/sign-in.html" class="create">Sign In</a>
+      </p>
       <button type="submit">Sign In</button>
     </form>
   </body>
