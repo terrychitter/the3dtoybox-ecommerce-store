@@ -105,6 +105,7 @@
             width: 100%;
             text-align: center;
             transition: 0.3s;
+            z-index: 999;
         }
 
         .nav-item {
@@ -123,7 +124,7 @@
         <a href="#" class="nav-branding"><img width="90px" height="90px" src="https://media.discordapp.net/attachments/1085644871508971680/1097857675913605220/logo4_18_22544.png?width=677&height=677" alt=""></a>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="#" class="nav-link">My Account</a>
+            <a href="/myaccount/myaccount.php" class="nav-link">My Account</a>
           </li>
           <li class="nav-item">
             <a href="/" class="nav-link">Home</a>
