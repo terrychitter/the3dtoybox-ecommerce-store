@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Email NOT sent";
     }
-    header("Location: ../index.php");
+    header("Location: email-success.html");
 } else {
     echo "Form was not submitted";
 }
