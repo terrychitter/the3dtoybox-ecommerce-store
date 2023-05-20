@@ -8,12 +8,12 @@ if (isset($_POST['submit'])) {
     $subject = sanitizeInput($_POST['reason']);
     $message = sanitizeInput($_POST['message']);
 
-    $mailTo = "the3dtoybox@gmail.com";
+    $mailTo = "support@the3dtoybox.com";
     $headers = "From: ".$mailFrom;
     $txt = "You have recieved an email from".$name.".\n\n".$message;
 
     mail($mailTo, $subject, $txt, $headers);
-    header("Location: index.php?mailsend")
+    header("Location: ../index.php?mailsend");
 
 }
 
