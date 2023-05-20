@@ -1,7 +1,5 @@
-<?php 
-
-if (isset($_POST['submit'])) {
-    
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Sanitize the email, name, subject, and message variables
     $name = sanitizeInput($_POST['name']);
     $mailFrom = sanitizeEmail($_POST['email']);
@@ -9,12 +7,17 @@ if (isset($_POST['submit'])) {
     $message = sanitizeInput($_POST['message']);
 
     $mailTo = "support@the3dtoybox.com";
-    $headers = "From: ".$mailFrom;
-    $txt = "You have recieved an email from".$name.".\n\n".$message;
+    $headers = "From: " . $mailFrom;
+    $txt = "You have received an email from " . $name . ".\n\n" . $message;
 
-    mail($mailTo, $subject, $txt, $headers);
-    header("Location: ../index.php?mailsend");
-
+    if (mail($mailTo, $subject, $txt, $headers)) {
+        echo 'Email Sent';
+    } else {
+        echo "Email NOT sent";
+    }
+    header("Location: ../index.php");
+} else {
+    echo "Form was not submitted";
 }
 
 // Function to sanitize input data
@@ -38,3 +41,5 @@ function sanitizeEmail($email) {
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     return $email;
 }
+
+ ?>
