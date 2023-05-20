@@ -29,21 +29,21 @@
           </svg>
         </div>
       </section>
-      <form action="../contact.php" method="post" class="contact-form">
+      <form action="contactform.php" method="post" class="contact-form">
         <h2>We'd love to hear from you, Get in touch 👋</h2>
         <div class="details">
           <div class="form-control">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" placeholder="Your Name" required />
           </div>
           <div class="form-control">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" />
+            <input type="text" name="email" id="email" placeholder="Your Email" required />
           </div>
         </div>
         <div class="form-control">
           <label for="reason">Reason</label>
-          <select name="reason" id="reason">
+          <select name="reason" id="reason" required>
             <option value="order_status">Order Status Inquiry</option>
             <option value="product_inquiry">Product Inquiry</option>
             <option value="shipping_delivery">
@@ -79,7 +79,7 @@
         </div>
         <div class="form-control">
           <label for="message">Message</label>
-          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+          <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Messsage" required></textarea>
           <p id="character-count">Character limit: 0/301</p>
         </div>
         <button type="submit" class="send-email-button">
