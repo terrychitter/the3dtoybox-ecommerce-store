@@ -121,7 +121,7 @@
 <header>
   <?php session_start(); ?>
       <nav class="navbar">
-        <a href="#" class="nav-branding"><img width="90px" height="90px" src="https://media.discordapp.net/attachments/1085644871508971680/1097857675913605220/logo4_18_22544.png?width=677&height=677" alt=""></a>
+        <a href="../index.php" class="nav-branding"><img width="90px" height="90px" src="https://media.discordapp.net/attachments/1085644871508971680/1097857675913605220/logo4_18_22544.png?width=677&height=677" alt=""></a>
         <ul class="nav-menu">
           <li class="nav-item">
             <a href="/myaccount/myaccount.php" class="nav-link">My Account</a>
@@ -136,7 +136,7 @@
             <a href="#" class="nav-link">Contact</a>
           </li>
           <li class="nav-item commerce-action wishlist">
-            <a href="#" class="nav-link">
+            <a href="../wishlist/wishlist.php" class="nav-link">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1096945276733902898/ezgif.com-optimize_7.gif">Wishlist</a>
           </li>
           <li class="nav-item commerce-action cart">
