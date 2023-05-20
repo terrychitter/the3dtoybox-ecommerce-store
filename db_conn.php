@@ -1,10 +1,6 @@
 <?php
 
-$db_sname = "localhost";
-$db_uname = "root";
-$db_pass = "";
-
-$db_name = "the3dtoybox";
+require_once("../config/db_credentials.php");
 
 $conn = mysqli_connect($db_sname, $db_uname, $db_pass, $db_name);
 
