@@ -133,7 +133,7 @@
             <a href="/shop/shop.php" class="nav-link">Shop</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="../contact/contact.php" class="nav-link">Contact</a>
           </li>
           <li class="nav-item commerce-action wishlist">
             <a href="../wishlist/wishlist.php" class="nav-link">
