@@ -38,9 +38,20 @@ if (isset($_POST['username']) && isset($_POST['phone']) && isset($_POST['email']
         if ($result === false) {
             echo "Error: " . mysqli_error($conn);
         } else {
+            $_SESSION['id'] = mysqli_insert_id($conn);
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $username;
-            $_SESSION['id'] = mysqli_insert_id($conn);
+            $_SESSION['phone'] = '';
+            $_SESSION['house_no'] = '';
+            $_SESSION['street_name'] = '';
+            $_SESSION['suburb'] = '';
+            $_SESSION['city'] = '';
+            $_SESSION['province'] = '';
+            $_SESSION['postal'] = '';
+            $_SESSION['orders'] = array();
+            $_SESSION['cart'] = array();
+            $_SESSION['wishlist'] = array();
+
             header('Location: shop/shop.php');
             exit();
         }
