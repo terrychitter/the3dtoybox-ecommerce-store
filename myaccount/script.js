@@ -52,8 +52,3 @@ editButton.addEventListener("click", function (event) {
 addEditActiveClass(".personal-form");
 addEditActiveClass(".address-form");
 addEditActiveClass(".username-form");
-
-// Redirecting the user to logout
-function logout() {
-  window.location.href = "../logout.php";
-}
