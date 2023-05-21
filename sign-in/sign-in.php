@@ -16,10 +16,13 @@
         class="logo"
       />
     </div>
-    <form action="../sign-in.php" method="post">
+    <form action="../login.php" method="post">
       <h1>Sign In</h1>
       <p>Stay updated on new and exciting products.</p>
       <div class="inputs">
+        <?php if (isset($_GET['error'])) {?>
+          <div class="error"><?php echo $_GET['error']; ?></div>
+          <?php } ?>
         <div class="form-control">
           <input
             type="email"
@@ -45,7 +48,7 @@
       <button type="submit">Sign In</button>
       <p>
         Don't have an account?
-        <a href="/sign-up/sign-up.html" class="create">Create One.</a>
+        <a href="/sign-up/sign-up.php" class="create">Create One.</a>
       </p>
     </form>
   </body>

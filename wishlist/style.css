@@ -125,10 +125,12 @@ button:hover > i {
 
 .no-items > h2 {
   font-weight: normal;
+  text-align: center;
 }
 
 .no-items > p {
   font-size: 0.8rem;
+  text-align: center;
 }
 
 .start-shopping {

@@ -84,6 +84,13 @@ h1 {
   font-size: 2rem;
 }
 
+.error {
+  background-color: lightcoral;
+  padding: 0.8rem;
+  border-radius: 4px;
+  color: white;
+}
+
 .inputs {
   display: flex;
   flex-direction: column;

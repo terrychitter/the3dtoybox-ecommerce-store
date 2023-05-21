@@ -267,7 +267,7 @@
         </ul>
       </section>
     </main>
-    <button class="logout-button">Log Out</button>
+    <button class="logout-button" onclick="logout()">Log Out</button>
     <?php include '../footer/footer.php'; ?>
   </body>
 </html>

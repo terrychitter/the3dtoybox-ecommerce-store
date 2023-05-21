@@ -20,6 +20,9 @@
       <h1>Sign Up</h1>
       <p>Create your account to be able to purchase products from our site.</p>
       <div class="inputs">
+      <?php if (isset($_GET['error'])) { ?>
+        <div class="error"><?php echo $_GET['error']; ?></div>
+      <?php } ?>
         <div class="form-control">
           <input
             type="text"
@@ -63,9 +66,9 @@
       </div>
       <p>
         Already have an account?
-        <a href="/sign-in/sign-in.html" class="create">Sign In</a>
+        <a href="/sign-in/sign-in.php" class="create">Sign In</a>
       </p>
-      <button type="submit">Sign In</button>
+      <button type="submit">Create Account</button>
     </form>
   </body>
 </html>

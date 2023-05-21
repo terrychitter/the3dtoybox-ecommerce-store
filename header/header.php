@@ -123,11 +123,20 @@
       <nav class="navbar">
         <a href="../index.php" class="nav-branding"><img width="90px" height="90px" src="https://media.discordapp.net/attachments/1085644871508971680/1097857675913605220/logo4_18_22544.png?width=677&height=677" alt=""></a>
         <ul class="nav-menu">
+          <?php if (isset($_SESSION['id'])) { ?>
           <li class="nav-item">
             <a href="/myaccount/myaccount.php" class="nav-link">My Account</a>
           </li>
+          <?php } else { ?>
+            <li class="nav-item">
+            <a href="../sign-in/sign-in.php" class="nav-link">Sign In</a>
+          </li>
           <li class="nav-item">
-            <a href="/" class="nav-link">Home</a>
+            <a href="../sign-up/sign-up.php" class="nav-link">Create Account</a>
+          </li>
+          <?php } ?>
+          <li class="nav-item">
+            <a href="../index.php" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
             <a href="/shop/shop.php" class="nav-link">Shop</a>
