@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "db_conn.php";
+require_once "db_conn.php";
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
 

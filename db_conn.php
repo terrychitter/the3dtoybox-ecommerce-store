@@ -1,6 +1,6 @@
 <?php
 
-require_once("../config/db_credentials.php");
+require_once __DIR__ . "/../config/db_credentials.php";
 
 $conn = mysqli_connect($db_sname, $db_uname, $db_pass, $db_name);
 

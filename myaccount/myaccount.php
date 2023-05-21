@@ -13,7 +13,13 @@
     ></script>
   </head>
   <body>
-    <?php include '../header/header.php' ?>
+    <?php
+    ob_start();
+    include '../header/header.php';
+    if (!isset($_SESSION['id'])) {
+      header("Location: ../index.php?error=An Unexpected error occured");
+      exit();
+    }?>
     <main>
       <section class="profile-decor">
         <svg
@@ -51,8 +57,8 @@
       <section class="username">
         <form class="username-form editable-form">
           <div>
-            <h1 class="username">txrry_x</h1>
-            <input type="text" name="username" id="username" />
+            <h1 class="username"><?php echo $_SESSION['username']; ?></h1>
+            <input type="text" name="username" id="username" value="<?php echo $_SESSION['username']; ?>"/>
             <button class="edit-button">
               <i class="fa-solid fa-pen fa-lg"></i>
             </button>
@@ -68,9 +74,9 @@
         >
           <h2>Personal Information</h2>
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" />
           <label for="contact-number">Contact Number</label>
-          <input type="tel" name="contact-number" id="contact-number" />
+          <input type="tel" name="contact-number" id="contact-number" value="<?php echo $_SESSION['phone']; ?>"/>
           <button type="submit">Save Changes</button>
         </form>
       </section>
@@ -82,33 +88,56 @@
         >
           <h2>Address Information</h2>
           <label for="house-number">House Number</label>
-          <input type="text" name="house-number" id="house-number" />
+          <input type="text" name="house-number" id="house-number" value="<?php echo $_SESSION['house_no']; ?>" />
 
           <label for="street-name">Street Name</label>
-          <input type="text" name="street-name" id="street-name" />
+          <input type="text" name="street-name" id="street-name" value="<?php echo $_SESSION['street_name']; ?>" />
 
           <label for="Suburb">Suburb</label>
-          <input type="text" name="suburb" id="suburb" />
+          <input type="text" name="suburb" id="suburb" value="<?php echo $_SESSION['suburb']; ?>" />
 
           <label for="city">City</label>
-          <input type="text" name="city" id="city" />
+          <input type="text" name="city" id="city" value="<?php echo $_SESSION['city']; ?>" />
 
-          <label for="province">province</label>
-          <input type="text" name="province" id="province" />
+          <label for="province">Province</label>
+          <input type="text" name="province" id="province" value="<?php echo $_SESSION['province']; ?>" />
 
           <label for="postal-code">Postal Code</label>
-          <input type="text" name="postal-code" id="postal-code" />
+          <input type="text" name="postal-code" id="postal-code" value="<?php echo $_SESSION['postal']; ?>" />
           <button type="submit">Save Changes</button>
         </form>
       </section>
       <section class="order-history" id="order-history">
         <h2>My Order History</h2>
         <ul class="scroller">
+          <?php
+          require_once "../db_conn.php";
+          foreach ($_SESSION['orders'] as $key => $value) {
+
+            // Preparing the query to get the total
+            $query = "SELECT total, order_date FROM orders WHERE order_id = $value";
+
+            // Execute the query and store the result in a variable
+            $result = mysqli_query($conn, $query);
+
+            // Check if the query was successful
+            if ($result) {
+                // Fetch the row from the result
+                $row = mysqli_fetch_assoc($result);
+                
+                // Access the 'total' column value from the fetched row
+                $total = $row['total'];
+                $date = $row['order_date'];
+            } else {
+                // Handle any errors that occurred during the query execution
+                echo "Error: " . mysqli_error($conn);
+            }
+            ?>
           <li class="order-card">
             <div class="order-card-head">
               <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
+              <span class="order-num">#<?php echo $value; ?></span>
+              <span class="order-date"><?php $dateString = strtotime($date); echo date("j M Y", $dateString);?></span>
             </div>
             <ul class="order-items">
               <li>1 x Figure</li>
@@ -117,157 +146,14 @@
             </ul>
             <div class="total-footer">
               <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
+              <span class="total"><?php echo $total; ?></span>
             </div>
           </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
-          <li class="order-card">
-            <div class="order-card-head">
-              <span class="order-num-label">order no.</span>
-              <span class="order-num">#A67cDW</span>
-              <span class="order-date">1 Jan 2023</span>
-            </div>
-            <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
-            </ul>
-            <div class="total-footer">
-              <span class="total-label">Total</span>
-              <span class="total">R299.90</span>
-            </div>
-          </li>
+          <?php } ?>
         </ul>
       </section>
     </main>
     <a href="../logout.php"><button class="logout-button">Log Out</button></a>
-    <?php include '../footer/footer.php'; ?>
+    <?php include '../footer/footer.php'; ob_end_flush();?>
   </body>
 </html>
