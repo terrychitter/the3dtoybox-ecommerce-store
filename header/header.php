@@ -149,7 +149,7 @@
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1096945276733902898/ezgif.com-optimize_7.gif">Wishlist</a>
           </li>
           <li class="nav-item commerce-action cart">
-            <a href="#" class="nav-link"></i>
+            <a href="../cart/cart.php" class="nav-link"></i>
               <img src="https://media3.giphy.com/media/wsTyMcJnYxnSyaGleS/giphy.gif?cid=ecf05e478e7awupm0e0062f071mwde6ut0y0mbvbqb7irfsr&rid=giphy.gif&ct=s">Cart</a>
           </li>
         </ul>

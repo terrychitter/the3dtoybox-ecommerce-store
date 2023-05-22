@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Overpass&display=swap");
+
+:root {
+  --grain: #d7cec7;
+  --blackboard: #565656;
+  --oxblood: #76323f;
+  --tan: #c09f80;
+  --banana: rgb(252, 239, 169);
+  --light-gray: rgb(233, 233, 233);
+  --gray: rgb(212, 212, 212);
+}
+
+::selection {
+  background-color: gold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.04rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+i {
+  color: var(--blackboard);
+}
+
+body {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  background: url("https://media.discordapp.net/attachments/1085644871508971680/1103343395163885578/terryc_visual_effects_doodle_style_minimalistic_white_c3e62385-d02e-485b-b828-8d20e351f2c2.png?width=677&height=677");
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+  z-index: -999;
+}
+
+main {
+  display: grid;
+  margin: 10px auto;
+  padding-inline: 1rem;
+  gap: 1.5rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "cart-decor cart-decor" "cart-items bill";
+}
+
+@media (min-width: 900px) {
+  main {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, 3);
+    grid-template-areas: "cart-decor" "cart-items" "bill";
+  }
+}
+
+i {
+  cursor: pointer;
+}
+
+main > * {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+  padding: 0.7rem;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
+}
+
+button,
+.start-shopping {
+  color: #fff;
+  background-color: #ffd700;
+  padding: 5px 10px;
+  border: solid #ffd700 1px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 12px;
+  transition: 375ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button i,
+.start-shopping {
+  color: white;
+  transition: 375ms;
+}
+
+button:hover,
+.start-shopping:hover {
+  transition: 375ms;
+  padding: 7px 12px;
+  background-color: #fff;
+  color: #ffd700;
+  border: solid 1px #ffd700;
+}
+
+button:hover i {
+  color: gold;
+  transition: 375ms;
+}
+
+input {
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.2rem;
+  border: solid 1px var(--gray);
+  outline: none;
+  transition: box-shadow 0.25s;
+}
+
+input:focus {
+  box-shadow: 0 0 2px var(--banana);
+  border: 1px solid gold;
+}
+
+input::placeholder {
+  color: rgb(94, 94, 94);
+}
+
+.cart-decor {
+  grid-area: cart-decor;
+  background: url("https://media.discordapp.net/attachments/1085644871508971680/1097570295260389407/terryc_toys_doodle_style_yellow_8019458a-59bf-4e82-860d-49cb6ee8ac0c.png?width=677&height=677");
+}
+
+.cart-decor .svg-wrapper {
+  display: block;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.788);
+  border-radius: 100vw;
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+}
+
+.svg-wrapper svg {
+  display: block;
+  padding: 20px;
+}
+
+.cart-items {
+  grid-area: cart-items;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+  height: 500px;
+  scroll-padding-block: 0.3rem;
+  overflow-y: auto;
+}
+
+@media (min-width: 551px) {
+  .cart-items::-webkit-scrollbar {
+    padding: 1rem;
+    height: 0.5rem;
+  }
+
+  .cart-items::-webkit-scrollbar-track {
+    background-color: var(--light-gray);
+    border-radius: 100vw;
+  }
+
+  .cart-items::-webkit-scrollbar-thumb {
+    background-color: var(--gray);
+    cursor: pointer;
+    border-radius: 100vw;
+  }
+}
+
+.no-items {
+  margin: auto;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-items > h2 {
+  font-weight: normal;
+  text-align: center;
+}
+
+.no-items > p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.start-shopping {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.cart-items > ul > li {
+  scroll-snap-align: start;
+}
+
+.cart-items ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 550px) {
+  .cart-items {
+    height: 400px;
+  }
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: repeat(auto, 5);
+  grid-template-rows: 1fr;
+  row-gap: 1rem;
+  border: 1px solid var(--light-gray);
+  padding: 0.5rem;
+  border-radius: 5px;
+  grid-template-areas: "col1 col2 col3 col4 col5";
+}
+
+@media (max-width: 550px) {
+  .cart-item {
+    grid-template-columns: repeat(auto, 3);
+    grid-template-rows: repeat(auto, 2);
+    grid-template-areas: "col1 col2 col2" "col3 col4 col5";
+  }
+}
+
+.col1 {
+  grid-area: col1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.col1 img {
+  width: 50px;
+  height: 50px;
+}
+
+.cart-item-actions :first-child {
+  margin-left: 14px;
+  color: crimson;
+}
+
+.desc-col :first-child {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-col :nth-child(2) {
+  display: block;
+}
+
+.col2 {
+  grid-area: col2;
+  margin-left: -2rem;
+}
+
+.col2 :first-child {
+  font-size: 1.2rem;
+}
+
+.col2 :nth-child(2) {
+  margin-top: -0.4rem;
+  font-size: 0.8rem;
+}
+
+.col3 {
+  grid-area: col3;
+}
+
+.col4 {
+  grid-area: col4;
+  margin-left: -1rem;
+}
+
+.col4 input {
+  width: 40px;
+}
+
+.col3 :nth-child(2),
+.col5 :nth-child(2) {
+  margin-top: 0.3rem;
+}
+
+.col5 {
+  text-align: right;
+  grid-area: col5;
+}
+
+.bill {
+  grid-area: bill;
+  position: relative;
+  min-height: 400px;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+form > p {
+  font-size: 1.2rem;
+}
+
+.promo-code-enter {
+  display: flex;
+}
+
+.promo-code-enter > input {
+  border-radius: 5px 0 0 5px;
+  border: inherit none inherit inherit;
+}
+
+.promo-code-enter > button {
+  border-radius: 0 5px 5px 0;
+}
+
+.promo-code-enter > button:hover {
+  padding: 5px 10px;
+}
+
+.bill-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bill-item.bill-total {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.checkout-button {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 1rem);
+  padding: 10px;
+  gap: 0.5rem;
+}
+
+.checkout-button.disabled {
+  background-color: grey;
+  border: none;
+  cursor: default;
+}
+
+.checkout-button.disabled i {
+  cursor: default;
+}
+
+.checkout-button.disabled:hover {
+  padding: 10px;
+  color: white;
+  background-color: grey;
+}
+
+.checkout-button.disabled:hover i {
+  color: white;
+}
