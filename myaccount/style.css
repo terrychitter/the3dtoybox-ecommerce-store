@@ -339,6 +339,7 @@ form > button[type="submit"] {
 ::-webkit-scrollbar {
   padding: 1rem;
   height: 0.5rem;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
