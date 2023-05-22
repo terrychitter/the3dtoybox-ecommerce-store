@@ -13,13 +13,10 @@ submitButton.addEventListener("click", function (event) {
 
   var currentPagePath = window.location.pathname;
 
-  //   if (!isValidEmail(emailInput.value)) {
-  //     var url =
-  //       currentPagePath +
-  //       "?error=" +
-  //       encodeURIComponent("This is an invalid Email");
-  //     window.location.href = url;
-  //   }
+  if (!isValidEmail(emailInput.value)) {
+    showErrorMessage("Email is invalid");
+    exit();
+  }
 
   if (!validateUsernameLength(usernameInput.value)) {
     showErrorMessage("Username is too long (Maximum 50 characters)");
