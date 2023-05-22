@@ -84,11 +84,23 @@ h1 {
   font-size: 2rem;
 }
 
+.form-control {
+  position: relative;
+}
+
+.password-eye {
+  position: absolute;
+  color: gainsboro;
+  cursor: pointer;
+  right: 0.5rem;
+  bottom: 1.2rem;
+}
+
 .error {
   background-color: lightcoral;
   padding: 0.8rem;
   border-radius: 4px;
-  color: white;
+  color: darkred;
 }
 
 .inputs {

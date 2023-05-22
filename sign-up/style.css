@@ -56,7 +56,6 @@ form {
   position: relative;
   border-radius: 4px;
   background-color: white;
-  height: 80vh;
 }
 
 form > * {
@@ -84,17 +83,22 @@ h1 {
   font-size: 2rem;
 }
 
+.already {
+  margin-bottom: 6rem;
+}
+
 .error {
   background-color: lightcoral;
   padding: 0.8rem;
   border-radius: 4px;
-  color: white;
+  color: darkred;
+  text-align: center;
 }
 
 .inputs {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 2rem;
   gap: 2rem;
 }
 
@@ -120,7 +124,7 @@ h1 {
 button[type="submit"] {
   font-size: 1.5rem;
   position: absolute;
-  bottom: calc(var(--parent-padding) / 2);
+  bottom: 2rem;
   width: calc(100% - var(--parent-padding) * 2);
   padding: 0.5rem;
   border: none;

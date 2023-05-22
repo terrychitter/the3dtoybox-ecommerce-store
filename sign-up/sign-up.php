@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>THE3DToyBox - Sign In</title>
     <style></style>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <div class="img-container">
@@ -16,7 +17,7 @@
         class="logo"
       />
     </div>
-    <form action="../create_account.php" method="post">
+    <form action="../create_account.php" method="post" id="create-account-form">
       <h1>Sign Up</h1>
       <p>Create your account to be able to purchase products from our site.</p>
       <div class="inputs">
@@ -39,6 +40,7 @@
             name="phone"
             id="phone"
             placeholder="Phone Number *"
+            pattern="\d{3}-\d{3}-\d{4}"
             required
           />
           <label for="phone">Error Message</label>
@@ -64,11 +66,11 @@
           <label for="password">Error Message</label>
         </div>
       </div>
-      <p>
+      <p class="already">
         Already have an account?
         <a href="/sign-in/sign-in.php" class="create">Sign In</a>
       </p>
-      <button type="submit">Create Account</button>
+      <button type="submit" id=submission-button>Create Account</button>
     </form>
   </body>
 </html>

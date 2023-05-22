@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>THE3DToyBox - Sign In</title>
-    <style></style>
+    <script
+      src="https://kit.fontawesome.com/805e2252e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="img-container">
@@ -31,7 +35,6 @@
             placeholder="Email or Phone"
             required
           />
-          <label for="email">Error Message</label>
         </div>
         <div class="form-control">
           <input
@@ -41,7 +44,7 @@
             placeholder="Password"
             required
           />
-          <label for="password">Error Message</label>
+          <i class="fa-solid fa-eye-slash fa-lg password-eye" onclick="togglePasswordVisibility();" id="password-eye"></i>
         </div>
       </div>
       <button class="forgot">Forgot Password?</button>
