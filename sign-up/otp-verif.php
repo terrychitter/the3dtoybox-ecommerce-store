@@ -8,6 +8,7 @@ if($email == false){
   $to = $email;
   $subject = "OTP Code - The3dToyBox";
   $headers = 'From: support@the3dtoybox.com';
+  $headers .= 'Content-Type: text/html; charset=UTF-8' . "\r\n";
   $message = "<!doctype html>
   <html>
     <head>
