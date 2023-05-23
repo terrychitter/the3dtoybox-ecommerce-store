@@ -52,6 +52,11 @@ if (isset($_POST['username']) && isset($_POST['phone']) && isset($_POST['email']
             $_SESSION['cart'] = array();
             $_SESSION['wishlist'] = array();
 
+            // Generate a random 6-digit code
+            $otp = mt_rand(100000, 999999);
+            // Store the OTP in a session variable
+            $_SESSION['otp'] = $otp;
+
             header('Location: sign-up/otp-verif.php');
             exit();
         }
