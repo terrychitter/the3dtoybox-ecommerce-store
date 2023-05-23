@@ -1,26 +1,21 @@
 <?php
 session_start();
 $email = $_SESSION['email'];
+$otp = $_SESSION['otp'];
 if($email == false){
   header('Location: sign-up.php');
 } else {
 
   $to = $email;
   $subject = "OTP Code - The3dToyBox";
-  $headers = 'From: support@the3dtoybox.com' . "\r\n";
-  $headers .= 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-  $message = file_get_contents('email-body.html');
-
-  // Replace placeholders with actual values
-  $template = str_replace('{{username}}', $_SESSION['username'], $template);
-  $template = str_replace('{{otp}}', $_SESSION['otp'], $template);
-  $message = $template;
+  $headers = 'From: support@the3dtoybox.com';
+  $message = "Your OTP Code is - $otp";
 
   // Send email
   if (!isset($_SESSION)) {
    if (!mail($to, $subject, $message, $headers)) {
-    //  header("Location: ../index.php?error=Failed to send email verification code");
-    //  exit();
+      header("Location: ../index.php?error=Failed to send email verification code");
+      exit();
    }
   }
 }
