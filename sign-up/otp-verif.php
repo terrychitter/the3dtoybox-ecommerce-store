@@ -3,33 +3,36 @@ session_start();
 $email = $_SESSION['email'];
 $otp = $_SESSION['otp'];
 
-if($email == false){
-  header('Location: sign-up.php');
+if ($email == false) {
+    header('Location: sign-up.php');
 } else {
 
-  $to = $email;
-  $subject = "OTP Code - The3dToyBox";
-  $headers = 'From: support@the3dtoybox.com';
+    $to = $email;
+    $subject = "OTP Code - The3dToyBox";
+    $headers = 'From: support@the3dtoybox.com' . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
 
-  // Read the email template file
-  $template = file_get_contents('email-body.html');
+    // Read the email template file
+    $template = file_get_contents('email-body.html');
 
-  // Replace placeholders with actual values
-  $template = str_replace('{{username}}', $_SESSION['username'], $template);
-  $template = str_replace('{{otp}}', $_SESSION['otp'], $template);
+    // Replace placeholders with actual values
+    $template = str_replace('{{username}}', $_SESSION['username'], $template);
+    $template = str_replace('{{otp}}', $_SESSION['otp'], $template);
 
-  // Use the modified template as the email message
-  $message = $template;
+    // Use the modified template as the email message
+    $message = $template;
 
-  // Send email
-  if (!isset($_GET['error'])) {
-   if (!mail($to, $subject, $message, $headers)) {
-      header("Location: ../index.php?error=Failed to send email verification code");
-      exit();
-   }
-  }
+    // Send email
+    if (!isset($_GET['error'])) {
+        if (!mail($to, $subject, $message, $headers)) {
+            header("Location: ../index.php?error=Failed to send email verification code");
+            exit();
+        }
+    }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
