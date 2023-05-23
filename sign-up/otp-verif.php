@@ -365,7 +365,7 @@ input :focus {
           <td>&nbsp;</td>
           <td class=\"container\">
             <div class=\"header\">
-              <table role="presentation" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">
+              <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">
                 <tr>
                   <td class=\"align-center\">
                     <a href=\"https://the3dtoybox.com\"><img src=\"https://media.discordapp.net/attachments/1085644871508971680/1097857675150241872/logo4_18_22549.png?width=677&height=677\" height=\"250\" alt=\"The3DToyBox\"></a>
@@ -419,7 +419,7 @@ input :focus {
       </table>
     </body>
   </html>
-  ';"
+  ";
 
   // Send email
    if (!mail($to, $subject, $message, $headers)) {
