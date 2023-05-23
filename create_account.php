@@ -52,7 +52,7 @@ if (isset($_POST['username']) && isset($_POST['phone']) && isset($_POST['email']
             $_SESSION['cart'] = array();
             $_SESSION['wishlist'] = array();
 
-            header('Location: shop/shop.php');
+            header('Location: sign-up/otp-verif.php');
             exit();
         }
         }
