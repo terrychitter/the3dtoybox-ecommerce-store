@@ -31,8 +31,14 @@ if (isset($_POST['username']) && isset($_POST['phone']) && isset($_POST['email']
     } else if (mysqli_num_rows($result) >= 1) {
         header("Location: sign-up/sign-up.php?error=Email or Phone number already in use");
     } else {
+
+        // Generate a random 6-digit code
+        $otp = mt_rand(100000, 999999);
+        // Store the OTP in a session variable
+        $_SESSION['otp'] = $otp;
+
         // Adding the user into the database
-        $sql = "INSERT INTO users (username, contact_number, email, password) VALUES ('$username', '$phone', '$email', '$hashedPassword')";
+        $sql = "INSERT INTO users (username, contact_number, email, password, otp, verified) VALUES ('$username', '$phone', '$email', '$hashedPassword', $otp, 0)";
         $result = mysqli_query($conn, $sql);
 
         if ($result === false) {
@@ -51,11 +57,6 @@ if (isset($_POST['username']) && isset($_POST['phone']) && isset($_POST['email']
             $_SESSION['orders'] = array();
             $_SESSION['cart'] = array();
             $_SESSION['wishlist'] = array();
-
-            // Generate a random 6-digit code
-            $otp = mt_rand(100000, 999999);
-            // Store the OTP in a session variable
-            $_SESSION['otp'] = $otp;
 
             header('Location: sign-up/otp-verif.php');
             exit();

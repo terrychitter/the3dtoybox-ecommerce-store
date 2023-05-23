@@ -7,8 +7,8 @@ if($email == false){
 
   $to = $email;
   $subject = "OTP Code - The3dToyBox";
-  $headers = 'From: support@the3dtoybox.com';
-  //$headers .= 'Content-Type: text/html; charset=UTF-8' . "\r\n";
+  $headers = 'From: support@the3dtoybox.com' . "\r\n";
+  $headers .= 'Content-Type: text/html; charset=UTF-8' . "\r\n";
   $message = file_get_contents('email-body.html');
 
   // Replace placeholders with actual values
@@ -17,10 +17,12 @@ if($email == false){
   $message = $template;
 
   // Send email
+  if (!isset($_SESSION)) {
    if (!mail($to, $subject, $message, $headers)) {
-     header("Location: ../index.php?error=Failed to send email verification code");
-     exit();
+    //  header("Location: ../index.php?error=Failed to send email verification code");
+    //  exit();
    }
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -153,8 +155,7 @@ if($email == false){
       }
 
       .error {
-        display: none;
-        background-color: crimson;
+        background-color: lightcoral;
         color: darkred;
       }
 
@@ -168,19 +169,76 @@ if($email == false){
         justify-content: center;
         margin: auto;
       }
+
+      #code-input.code-entered {
+        letter-spacing: 0.5rem;
+        font-weight: bold;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <main>
       <h1>OTP Verification</h1>
-      <div class="error">Error Text</div>
+      <?php if(isset($_GET['error'])) { ?>
+      <div class="error"><?php echo $_GET['error']; ?></div>
+      <?php } else { ?>
       <div class="success">
         We've sent a verification code to your email (<?php echo $email ?>)
       </div>
-      <form action="" method="post">
-        <input type="text" placeholder="Enter verification code" />
+      <?php } ?>
+      <form action="check-otp.php" method="post">
+        <input type="text" name="otp" placeholder="Enter verification code" pattern="\d-\d-\d-\d-\d-\d" id="code-input" required />
         <button type="submit" class="submit-code">Submit</button>
       </form>
     </main>
+    <script>
+        const codeInput = document.getElementById('code-input');
+
+        codeInput.addEventListener('input', function() {
+          const code = this.value;
+
+          // Remove all non-digit characters from the input value
+          const sanitizedCode = code.replace(/\D/g, '');
+
+          // Add dashes between each digit
+          let formattedCode = '';
+          for (let i = 0; i < sanitizedCode.length; i++) {
+            formattedCode += sanitizedCode[i];
+            if (i !== sanitizedCode.length - 1) {
+              formattedCode += '-';
+            }
+          }
+
+          // Set the formatted code as the input value
+          this.value = formattedCode;
+
+          // Prevent further input when 6 digits are present
+          if (sanitizedCode.length >= 10) {
+            this.maxLength = 11; // Set an extra character space for the last dash
+          } else {
+            this.maxLength = 10;
+          }
+        });
+
+        codeInput.addEventListener('input', function() {
+          if (codeInput.value.length > 0) {
+            codeInput.classList.add('code-entered');
+          } else {
+            codeInput.classList.remove('code-entered');
+          }
+        });
+
+        document.querySelector('form').addEventListener('submit', function(event) {
+        // Get the input element
+        var input = document.getElementById('code-input');
+
+        // Remove dashes from the input value
+        var code = input.value.replace(/-/g, '');
+
+        // Update the input value without dashes
+        input.value = code;
+      });
+    </script>
   </body>
 </html>
