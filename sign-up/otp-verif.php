@@ -2,6 +2,7 @@
 session_start();
 $email = $_SESSION['email'];
 $otp = $_SESSION['otp'];
+
 if($email == false){
   header('Location: sign-up.php');
 } else {
@@ -12,7 +13,7 @@ if($email == false){
   $message = "Your OTP Code is - $otp";
 
   // Send email
-  if (!isset($_SESSION)) {
+  if (!isset($_GET['error'])) {
    if (!mail($to, $subject, $message, $headers)) {
       header("Location: ../index.php?error=Failed to send email verification code");
       exit();
