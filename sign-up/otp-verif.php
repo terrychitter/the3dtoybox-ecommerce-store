@@ -8,11 +8,11 @@ if($email == false){
   $to = $email;
   $subject = "OTP Code - The3dToyBox";
   $headers = 'From: support@the3dtoybox.com';
-  $message = '<!doctype html>
+  $message = "<!doctype html>
   <html>
     <head>
-      <meta name="viewport" content="width=device-width" />
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name=\"viewport\" content=\"width=device-width\" />
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
       <title>Verification Code</title>
     </head>
     <style>
@@ -21,7 +21,7 @@ if($email == false){
       ------------------------------------- */
       
       /*All the styling goes here*/
-      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Overpass&display=swap");
+      @import url(\"https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Overpass&display=swap\");
       
       img {
         border: none;
@@ -42,8 +42,8 @@ if($email == false){
       }
 
      body::before {
-  content: "";
-  background: url("https://media.discordapp.net/attachments/1085644871508971680/1103343395163885578/terryc_visual_effects_doodle_style_minimalistic_white_c3e62385-d02e-485b-b828-8d20e351f2c2.png?width=677&height=677");
+  content: \"\";
+  background: url(\"https://media.discordapp.net/attachments/1085644871508971680/1103343395163885578/terryc_visual_effects_doodle_style_minimalistic_white_c3e62385-d02e-485b-b828-8d20e351f2c2.png?width=677&height=677\");
   position: absolute;
   top: 0px;
   right: 0px;
@@ -359,42 +359,42 @@ input :focus {
     border-color: gold;
 }
     </style>
-    <body class="">
-      <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+    <body class=\"\">
+      <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"body\">
         <tr>
           <td>&nbsp;</td>
-          <td class="container">
-            <div class="header">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+          <td class=\"container\">
+            <div class=\"header\">
+              <table role="presentation" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">
                 <tr>
-                  <td class="align-center">
-                    <a href="https://the3dtoybox.com"><img src="https://media.discordapp.net/attachments/1085644871508971680/1097857675150241872/logo4_18_22549.png?width=677&height=677" height="250" alt="The3DToyBox"></a>
+                  <td class=\"align-center\">
+                    <a href=\"https://the3dtoybox.com\"><img src=\"https://media.discordapp.net/attachments/1085644871508971680/1097857675150241872/logo4_18_22549.png?width=677&height=677\" height=\"250\" alt=\"The3DToyBox\"></a>
                   </td>
                 </tr>
               </table>
             </div>
-            <div class="content">
+            <div class=\"content\">
   
               <!-- START CENTERED WHITE CONTAINER -->
-              <span class="preheader">Here is your OTP - The3DToyBox</span>
-              <table role="presentation" class="main">
+              <span class=\"preheader\">Here is your OTP - The3DToyBox</span>
+              <table role=\"presentation\" class=\"main\">
   
                 <!-- START MAIN CONTENT AREA -->
                 <tr>
-                  <td class="wrapper">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                  <td class=\"wrapper\">
+                    <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">
                       <tr>
                         <td>
-                          <p>Hi '.$_SESSION['username']. ',</p>
+                          <p>Hi ".$_SESSION['username']. ",</p>
                           <p>Welcome to The3DToyBox! Your account has already been set up. You email verifcation code is below. Glad to have you!</p>
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                          <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"btn btn-primary\">
                             <tbody>
                               <tr>
-                                <td align="left">
-                                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                <td align=\"left\">
+                                  <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">
                                     <tbody>
                                       <tr>
-                                        <td><input value="' .$_SESSION['otp'] .'" readonly></td>
+                                        <td><input value=\" " .$_SESSION['otp'] ." \" readonly></td>
                                       </tr>
                                     </tbody>
                                   </table>
@@ -407,7 +407,7 @@ input :focus {
               </table>
   
               <!-- START FOOTER -->
-              <div class="footer">
+              <div class=\"footer\">
               </div>
               <!-- END FOOTER -->
   
@@ -419,7 +419,7 @@ input :focus {
       </table>
     </body>
   </html>
-  ';
+  ';"
 
   // Send email
    if (!mail($to, $subject, $message, $headers)) {
