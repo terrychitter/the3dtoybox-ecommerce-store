@@ -10,7 +10,16 @@ if($email == false){
   $to = $email;
   $subject = "OTP Code - The3dToyBox";
   $headers = 'From: support@the3dtoybox.com';
-  $message = "Your OTP Code is - $otp";
+
+  // Read the email template file
+  $template = file_get_contents('email-body.html');
+
+  // Replace placeholders with actual values
+  $template = str_replace('{{username}}', $_SESSION['username'], $template);
+  $template = str_replace('{{otp}}', $_SESSION['otp'], $template);
+
+  // Use the modified template as the email message
+  $message = $template;
 
   // Send email
   if (!isset($_GET['error'])) {
