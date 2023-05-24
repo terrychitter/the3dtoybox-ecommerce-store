@@ -140,9 +140,59 @@ form > label {
   font-size: 0.8rem;
 }
 
-form > button[type="submit"] {
+form > button[type="reset"] {
+  background-color: crimson;
+  border: none;
+}
+
+button[type="reset"]:hover {
+  transition: 375ms;
+  padding: 7px 12px;
+  background-color: #fff;
+  color: crimson;
+  border: solid 1px crimson;
+}
+
+form > button[type="submit"],
+form > button[type="reset"] {
   display: flex;
   float: right;
+  margin-left: 0.6rem;
+}
+
+.warning {
+  font-size: 0.8rem;
+  background-color: lightsalmon;
+  color: black;
+  padding: 0.4rem;
+  border-radius: 5px;
+  margin-top: -0.8rem;
+  margin-bottom: 1rem;
+}
+
+.update {
+  background-color: palegreen;
+  display: none;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.error {
+  background-color: lightcoral;
+  display: none;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .profile-decor {
@@ -191,8 +241,27 @@ form > button[type="submit"] {
   display: none;
 }
 
+.username-form.editable-form p {
+  display: none;
+}
+
+.username-form.editable-form.show-input > div {
+  display: block;
+}
+
 .username-form.editable-form.show-input input {
   display: block;
+}
+
+.username-form.editable-form.show-input p {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: -0.6rem;
+  display: block;
+}
+
+.username-form.editable-form.show-input button[type="reset"] {
+  display: flex;
 }
 
 .username-form.editable-form.show-input h1 {
@@ -207,12 +276,20 @@ form > button[type="submit"] {
   display: flex;
 }
 
+.username-form.editable-form.edit-active button[type="reset"] {
+  display: flex;
+}
+
 .username-form.editable-form .edit-button {
   background-color: white;
   border: none;
 }
 
 .username-form.editable-form button[type="submit"] {
+  display: none;
+}
+
+.username-form.editable-form button[type="reset"] {
   display: none;
 }
 
@@ -225,6 +302,10 @@ form > button[type="submit"] {
 }
 
 .editable-form button[type="submit"] {
+  display: none;
+}
+
+.editable-form button[type="reset"] {
   display: none;
 }
 
@@ -242,6 +323,12 @@ form > button[type="submit"] {
 
 .order-history {
   grid-area: order-history;
+  min-height: 100px;
+}
+
+.no-orders {
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .order-card {

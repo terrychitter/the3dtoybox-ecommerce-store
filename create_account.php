@@ -47,7 +47,7 @@ if (isset($_POST['username']) && isset($_POST['phone']) && isset($_POST['email']
             $_SESSION['id'] = mysqli_insert_id($conn);
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $username;
-            $_SESSION['phone'] = '';
+            $_SESSION['phone'] = $phone;
             $_SESSION['house_no'] = '';
             $_SESSION['street_name'] = '';
             $_SESSION['suburb'] = '';

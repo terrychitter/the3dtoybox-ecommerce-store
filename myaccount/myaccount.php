@@ -17,9 +17,9 @@
     ob_start();
     include '../header/header.php';
     if (!isset($_SESSION['id'])) {
-      header("Location: ../index.php?error=An Unexpected error occured");
-      exit();
-    }?>
+       header("Location: ../index.php?error=An Unexpected error occured");
+       exit();       
+      } ?>
     <main>
       <section class="profile-decor">
         <svg
@@ -55,7 +55,7 @@
         </svg>
       </section>
       <section class="username">
-        <form class="username-form editable-form">
+        <form action="update-username.php" class="username-form editable-form">
           <div>
             <h1 class="username"><?php echo $_SESSION['username']; ?></h1>
             <input type="text" name="username" id="username" value="<?php echo $_SESSION['username']; ?>"/>
@@ -63,6 +63,7 @@
               <i class="fa-solid fa-pen fa-lg"></i>
             </button>
           </div>
+          <button type="reset">Cancel</button>
           <button type="submit">Save Changes</button>
         </form>
       </section>
@@ -73,20 +74,42 @@
           class="personal-form editable-form"
         >
           <h2>Personal Information</h2>
+          <?php if (isset($_GET['status'])) {
+          if ($_GET['status'] == "personal updated") { ?>
+          <p class="warning update">Your Personal Info has been successfully updated!</p>
+          <?php } } ?>
+          <?php if (isset($_GET['error'])) {
+          if ($_GET['error'] == "Contact number in use") { ?>
+          <p class="warning error">That contact number is already in use!</p>
+          <?php } } ?>
+          <?php if (isset($_GET['error'])) {
+          if ($_GET['error'] == "Email in use") { ?>
+          <p class="warning error">That email is already in use!</p>
+          <?php } } ?>
           <label for="email">Email</label>
           <input type="email" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" />
           <label for="contact-number">Contact Number</label>
-          <input type="tel" name="contact-number" id="contact-number" value="<?php echo $_SESSION['phone']; ?>"/>
+          <input type="tel" name="contact-number" id="contact-number" pattern="\d{3}-\d{3}-\d{4}" value="<?php echo $_SESSION['phone']; ?>"/>
+          <button type="reset">Cancel</button>
           <button type="submit">Save Changes</button>
         </form>
       </section>
       <section class="address-info">
         <form
-          action="edit-account.php"
+          action="update-address.php"
           method="post"
           class="address-form editable-form"
         >
           <h2>Address Information</h2>
+          <?php if (isset($_GET['status'])) {
+          if ($_GET['status'] == "address updated") { ?>
+          <p class="warning update">Your Address has been successfully updated!</p>
+          <?php } ?>
+          <?php if ((!isset($_SESSION['house_no']) || $_SESSION['house_no'] === "") ||  (!isset($_SESSION['street_name']) || $_SESSION['street_name'] === "") ||
+                (!isset($_SESSION['suburb']) || $_SESSION['suburb'] === "") || (!isset($_SESSION['city']) || $_SESSION['city'] === "") ||
+                (!isset($_SESSION['province']) || $_SESSION['province'] === "") || (!isset($_SESSION['postal']) || $_SESSION['postal'] === "")) { ?>
+          <p class="warning">Your address is incomplete. Complete the fields below to be able to buy items from the store and have them delivered!</p>
+          <?php } }?>
           <label for="house-number">House Number</label>
           <input type="text" name="house-number" id="house-number" value="<?php echo $_SESSION['house_no']; ?>" />
 
@@ -105,10 +128,12 @@
           <label for="postal-code">Postal Code</label>
           <input type="text" name="postal-code" id="postal-code" value="<?php echo $_SESSION['postal']; ?>" />
           <button type="submit">Save Changes</button>
+          <button type="reset">Cancel</button>
         </form>
       </section>
       <section class="order-history" id="order-history">
         <h2>My Order History</h2>
+        <p class="no-orders">You have no orders in your history yet. Purchase some goodies to fill this area up!</p>
         <ul class="scroller">
           <?php
           require_once "../db_conn.php";
