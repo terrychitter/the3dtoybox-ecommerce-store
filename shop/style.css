@@ -361,7 +361,16 @@ section > h2 {
 }
 
 .product-desc {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  height: 3rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.product-desc,
+.product-name {
+  margin-inline: 0.5rem;
 }
 
 .product-price {
@@ -439,8 +448,8 @@ button.add-to-cart {
     aspect-ratio: 16/9;
   }
 
-  .product-card > * {
-    font-size: 1rem;
+  .product-desc {
+    font-size: 0.8rem;
   }
 }
 

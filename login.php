@@ -60,7 +60,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 }
 
                 // Retrieving cart items from the database
-                $sql = "SELECT cart_item_id FROM cart_items WHERE user_id = '{$_SESSION['id']}'";
+                $sql = "SELECT product_id FROM cart_items WHERE user_id = '{$_SESSION['id']}'";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result) {
@@ -68,7 +68,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
                     // Populating the cart_items array with cart item ids
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $cart_items[] = $row['cart_item_id'];
+                        $cart_items[] = $row['product_id'];
                     }
 
                     // Assigning the cart items array to the cart session variable
@@ -79,7 +79,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 }
 
                 // Retrieve wishlist items from the database
-                $sql = "SELECT wish_list_item_id FROM wish_list_items WHERE user_id = '{$_SESSION['id']}'";
+                $sql = "SELECT product_id FROM wish_list_items WHERE user_id = '{$_SESSION['id']}'";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result) {
@@ -87,7 +87,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
                     // Populating the wishlist_items array with wishlist item ids
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $wishlist_items[] = $row['wish_list_item_id'];
+                        $wishlist_items[] = $row['product_id'];
                     }
 
                     // Assigning the wishlist array to the wishlist session variable

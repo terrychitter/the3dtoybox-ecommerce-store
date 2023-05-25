@@ -34,3 +34,40 @@ buttons.forEach((button) => {
     clearInterval(intervalId);
   });
 });
+
+//ADDING ITEMS TO THE WISHLIST
+// Get all the product cards
+console.log("Bottom script loaded");
+const productCards = document.querySelectorAll(".product-card");
+
+// Loop through each product card
+productCards.forEach((productCard) => {
+  // Find the heart icon element
+  const heartIcon = productCard.querySelector(".fa-heart");
+
+  // Get the data-productId value
+  const productId = productCard.getAttribute("data-productId");
+
+  // Check the initial class of the heart icon
+  const isRegularHeart = heartIcon.classList.contains("fa-regular"); //false
+
+  // Add a click event listener to the heart icon
+  heartIcon.addEventListener("click", () => {
+    // Check the updated class of the heart icon
+    const isRegularHeartNow = heartIcon.classList.contains("fa-regular"); //false
+
+    // Add or remove the productId from the wishlist array
+    if (isRegularHeartNow) {
+      // Add productId to the wishlist
+      console.log("Added to Wishlist");
+      heartIcon.classList.remove("fa-regular");
+      heartIcon.classList.add("fa-solid");
+      window.location.href = "add_item_wishlist.php?product_id=" + productId;
+    } else {
+      // Remove productId from the wishlist
+      heartIcon.classList.remove("fa-solid");
+      heartIcon.classList.add("fa-regular");
+      window.location.href = "remove_item_wishlist.php?product_id=" + productId;
+    }
+  });
+});

@@ -129,713 +129,195 @@
         <section id="new" class="category-group new">
           <h2>New Products</h2>
           <ul class="scroller product-scroller">
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
+            <?php include "../db_conn.php";
+
+            // Getting all new products
+            $sql = "SELECT * FROM products WHERE new=true";
+            $result = mysqli_query($conn, $sql);
+            
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
+              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
+                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
               </div>
-              <p class="product-name">Product Name</p>
+              <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
-                This is the product description
+                <?php echo $row['description']; ?>
               </p>
               <p class="product-price">
-                R299.99
+                <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
+            </li><?php } ?>
           </ul>
         </section>
         <section id="featured" class="category-group featured">
           <h2>Featured Products</h2>
           <ul class="scroller product-scroller">
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
+          <?php // Getting all featured products
+            $sql = "SELECT * FROM products WHERE featured=true";
+            $result = mysqli_query($conn, $sql);
+            
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
+              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
+                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
               </div>
-              <p class="product-name">Product Name</p>
+              <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
-                This is the product description
+                <?php echo $row['description']; ?>
               </p>
               <p class="product-price">
-                R299.99
+                <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
+            </li><?php } ?>
           </ul>
         </section>
         <section id="mini-figures" class="category-group mini-figures">
           <h2>Mini-Figures</h2>
           <ul class="scroller product-scroller">
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
+          <?php // Getting all mini-figure products
+            $sql = "SELECT * FROM products WHERE category='Mini-Figures'";
+            $result = mysqli_query($conn, $sql);
+            
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
+              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
+                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
               </div>
-              <p class="product-name">Product Name</p>
+              <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
-                This is the product description
+                <?php echo $row['description']; ?>
               </p>
               <p class="product-price">
-                R299.99
+                <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
+            </li><?php } ?>
           </ul>
         </section>
         <section id="Collectibles" class="category-group Collectibles">
           <h2>Collectibles</h2>
           <ul class="scroller product-scroller">
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
+          <?php // Getting all collectible products
+            $sql = "SELECT * FROM products WHERE category='Collectibles'";
+            $result = mysqli_query($conn, $sql);
+            
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
+              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
+                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
               </div>
-              <p class="product-name">Product Name</p>
+              <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
-                This is the product description
+                <?php echo $row['description']; ?>
               </p>
               <p class="product-price">
-                R299.99
+                <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
+            </li><?php } ?>
           </ul>
         </section>
         <section id="keychains" class="category-group keychains">
           <h2>Keychains</h2>
           <ul class="scroller product-scroller">
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
+          <?php // Getting all keychains products
+            $sql = "SELECT * FROM products WHERE category='Keychains'";
+            $result = mysqli_query($conn, $sql);
+            
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
+              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
+                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
               </div>
-              <p class="product-name">Product Name</p>
+              <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
-                This is the product description
+                <?php echo $row['description']; ?>
               </p>
               <p class="product-price">
-                R299.99
+                <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
+            </li><?php } ?>
           </ul>
         </section>
         <section id="home-decor" class="category-group home-decor">
           <h2>Home Decor</h2>
           <ul class="scroller product-scroller">
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
+          <?php // Getting all hone decor products
+            $sql = "SELECT * FROM products WHERE category='Home Decor'";
+            $result = mysqli_query($conn, $sql);
+            
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
+              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
+                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
               </div>
-              <p class="product-name">Product Name</p>
+              <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
-                This is the product description
+                <?php echo $row['description']; ?>
               </p>
               <p class="product-price">
-                R299.99
+                <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
+            </li><?php } ?>
           </ul>
         </section>
         <section id="pins" class="category-group pins">
           <h2>Pins</h2>
           <ul class="scroller product-scroller">
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
+          <?php // Getting all pins products
+            $sql = "SELECT * FROM products WHERE category='Pins'";
+            $result = mysqli_query($conn, $sql);
+            
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
+              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
+                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
               </div>
-              <p class="product-name">Product Name</p>
+              <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
-                This is the product description
+                <?php echo $row['description']; ?>
               </p>
               <p class="product-price">
-                R299.99
+                <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
+            </li><?php } ?>
           </ul>
         </section>
         <section id="toys" class="category-group toys">
           <h2>Toys</h2>
           <ul class="scroller product-scroller">
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
+          <?php // Getting all toys products
+            $sql = "SELECT * FROM products WHERE category='Toys'";
+            $result = mysqli_query($conn, $sql);
+            
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
+              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
+                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
               </div>
-              <p class="product-name">Product Name</p>
+              <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
-                This is the product description
+                <?php echo $row['description']; ?>
               </p>
               <p class="product-price">
-                R299.99
+                <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
-            <li class="product-card">
-              <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="product-image">
-              <div class="add-to-wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <p class="product-name">Product Name</p>
-              <p class="product-desc">
-                This is the product description
-              </p>
-              <p class="product-price">
-                R299.99
-              </p>
-              <button class="add-to-cart">Add to Cart</button>
-            </li>
+            </li><?php } ?>
           </ul>
         </section>
         <div id="news" class="news">News</div>
