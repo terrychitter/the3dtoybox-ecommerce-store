@@ -42,15 +42,23 @@
             <p>Explore more and add some goodies to the list</p>
             <a href="../shop/shop.php" class="start-shopping">Start Shopping</a>
           </div>
-          <!-- <li class="wishlist-item">
+          <?php // Getting all wishlist items
+          if (!empty($_SESSION['wishlist'])) {
+            include '../db_conn.php';
+            $wishlistIds = implode(',', $_SESSION['wishlist']);
+            $sql = "SELECT * FROM products WHERE product_id IN ($wishlistIds)";
+            $result = mysqli_query($conn, $sql);
+
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+          <li class="wishlist-item" data-productId="<?php echo $row['product_id'];?>">
             <div class="col1">
               <div class="col1-col1">
                 <i class="fa-solid fa-trash fa-lg"></i>
                 <img src="" alt="" />
               </div>
               <div class="col1-col2">
-                <p>Product Name</p>
-                <p>R299.99</p>
+                <p><?php echo $row['name']; ?></p>
+                <p>R <?php echo $row['price']; ?></p>
               </div>
             </div>
             <div class="col2">
@@ -60,7 +68,8 @@
                 <i class="fa-solid fa-check"></i>
               </button>
             </div>
-          </li> -->
+          </li>
+          <?php } }?>
         </ul>
       </section>
     </main>

@@ -62,12 +62,13 @@ productCards.forEach((productCard) => {
       console.log("Added to Wishlist");
       heartIcon.classList.remove("fa-regular");
       heartIcon.classList.add("fa-solid");
-      window.location.href = "add_item_wishlist.php?product_id=" + productId;
+      window.location.href = "../add_item_wishlist.php?product_id=" + productId;
     } else {
       // Remove productId from the wishlist
       heartIcon.classList.remove("fa-solid");
       heartIcon.classList.add("fa-regular");
-      window.location.href = "remove_item_wishlist.php?product_id=" + productId;
+      window.location.href =
+        "../remove_item_wishlist.php?product_id=" + productId;
     }
   });
 });

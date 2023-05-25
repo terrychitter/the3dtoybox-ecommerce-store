@@ -16,17 +16,32 @@ buttons.forEach((button) => {
   });
 });
 
-// Get all the trash icons
-const trashIcons = document.querySelectorAll(".fa-solid.fa-trash.fa-lg");
+const wishlistItems = document.querySelectorAll(".wishlist-item");
 
-// Attach an event listener to each of them
-trashIcons.forEach((trashIcon) => {
-  trashIcon.addEventListener("click", (event) => {
-    // Get the parent <li> element of the clicked trash icon
-    const listItem = event.currentTarget.closest(".wishlist-item");
+// Loop through each product card
+wishlistItems.forEach((wishlistItem) => {
+  // Get the data-productId value
+  const productId = wishlistItem.getAttribute("data-productId");
+  // Get all the trash icons
+  const trashIcons = document.querySelectorAll(".fa-solid.fa-trash.fa-lg");
+  //Get all the add-to-cart buttons
+  const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
-    // Remove the parent <li> element
-    listItem.remove();
+  // Attach an event listener to each trash icon
+  trashIcons.forEach((trashIcon) => {
+    trashIcon.addEventListener("click", (event) => {
+      // Removing the item from wishlist
+      window.location.href =
+        "../remove_item_wishlist.php?product_id=" + productId;
+    });
+  });
+
+  // Attach an event listener to each of add to cart button
+  addToCartButtons.forEach((addToCartButton) => {
+    addToCartButton.addEventListener("click", (event) => {
+      // Adding the item to the cart
+      window.location.href = "../add_item_cart.php?product_id=" + productId;
+    });
   });
 });
 

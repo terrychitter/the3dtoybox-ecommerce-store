@@ -198,10 +198,17 @@ button:hover > i {
 }
 
 .col1-col2 {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 50%;
+}
+
+.col1-col2 :first-child {
+  font-weight: bold;
+}
+
+.col1-col2 :last-child {
+  margin-top: 0.5rem;
 }
 
 .add-to-cart:disabled {

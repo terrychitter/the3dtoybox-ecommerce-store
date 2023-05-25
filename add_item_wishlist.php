@@ -5,7 +5,7 @@ session_start();
 $id = $_SESSION['id'];
 $productID = $_GET['product_id'];
 
-require_once '../db_conn.php';
+require_once 'db_conn.php';
 
 $sql = "INSERT INTO wish_list_items (product_id, user_id) VALUES ($productID, $id)";
 mysqli_query($conn, $sql);
@@ -14,6 +14,6 @@ mysqli_query($conn, $sql);
 $_SESSION['wishlist'][] = $productID;
 
 // Go back to the store page
-header("Location: shop.php");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit();
 ?>
