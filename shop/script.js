@@ -71,4 +71,14 @@ productCards.forEach((productCard) => {
         "../remove_item_wishlist.php?product_id=" + productId;
     }
   });
+
+  //Get all the add-to-cart buttons
+  const addToCartButtons = document.querySelectorAll(".add-to-cart");
+  // Attach an event listener to each of add to cart button
+  addToCartButtons.forEach((addToCartButton) => {
+    addToCartButton.addEventListener("click", (event) => {
+      // Adding the item to the cart
+      window.location.href = "../add_item_cart.php?product_id=" + productId;
+    });
+  });
 });
