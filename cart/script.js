@@ -26,7 +26,7 @@ function showNoItems() {
     const shipping = document.querySelector("#shipping");
     const discount = document.querySelector("#discount");
     const taxCost = document.querySelector("#tax");
-    const total = document.querySelector("#total");
+    const total = document.querySelector("#bill-total");
 
     // Displaying the no-items div
     noItemsDiv.style.display = "flex";
@@ -40,8 +40,11 @@ function showNoItems() {
     // Disabling checkout button
     checkoutButton.classList.add("disabled");
     checkoutButton.display = true;
+    checkoutButton.disabled = true;
   }
 }
+
+showNoItems();
 
 const cartItems = document.querySelectorAll(".cart-item");
 
@@ -64,8 +67,6 @@ cartItems.forEach((cartItem) => {
     removeCartItem(productId);
   });
 });
-
-showNoItems();
 
 function calculateBillTotal() {
   const cartItems = document.querySelectorAll(".cart-item");
