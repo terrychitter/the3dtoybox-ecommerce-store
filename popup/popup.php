@@ -55,26 +55,32 @@
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var popup = document.getElementById("popup");
+      var popup = document.getElementById("popup");
 
-        // Show the popup
-        function showPopup() {
-          popup.classList.add("show");
-        }
+      // Show the popup
+      function showPopup() {
+      popup.classList.add("show");
+      }
 
-        // Hide the popup
-        function hidePopup() {
-          popup.classList.remove("show");
-        }
+     // Hide the popup
+     function hidePopup() {
+      popup.classList.remove("show");
+    }
 
-        // Set timeout to hide the popup after 6 seconds
-        setTimeout(function () {
-          hidePopup();
-        }, 6000);
+    // Set timeout to hide the popup after 6 seconds
+    var timeoutId = setTimeout(function () {
+      hidePopup();
+    }, 6000);
 
-        // Display the popup
-        showPopup();
-      });
+    // Display the popup
+    showPopup();
+
+    // When the cursor hovers over the popup, hide it and clear the timeout
+    popup.addEventListener("mouseenter", function () {
+    hidePopup();
+    clearTimeout(timeoutId);
+  });
+});
     </script>
     <?php } ?> 
   </body>

@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <?php include "../header/header.php"; ?>
+    <?php include "../header/header.php";
+    include "../popup/popup.php"?>
     <main>
       <section class="cart-decor">
         <div class="svg-wrapper">
