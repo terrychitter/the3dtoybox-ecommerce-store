@@ -51,40 +51,33 @@
             <p>Explore more and add some goodies to the list</p>
             <a href="../shop/shop.php" class="start-shopping">Start Shopping</a>
           </div>
-          <!-- <li class="cart-item">
+          <?php // Getting all wishlist items
+          if (!empty($_SESSION['cart'])) {
+            include '../db_conn.php';
+            $cartItemIds = implode(',', $_SESSION['cart']);
+            $sql = "SELECT * FROM products WHERE product_id IN ($cartItemIds)";
+            $result = mysqli_query($conn, $sql);
+
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+            <li class="cart-item" data-productID="<?php echo $row['product_id']; ?>">
             <div class="col1">
               <img src="" alt="" />
               <div class="cart-item-actions">
                 <i
                   class="fa-solid fa-trash fa-lg"
-                  onclick="deleteListItem();"
                 ></i>
               </div>
             </div>
             <div class="col2 desc-col">
-              <span>Product Name</span>
-              <span>Product Style</span>
-            </div>
-            <div class="col3 desc-col">
-              <span>each</span>
-              <span>R299.98</span>
-            </div>
-            <div class="col4 desc-col">
-              <span>quantity</span>
-              <input
-                type="number"
-                name="quantity"
-                id="quantity"
-                min="1"
-                max="10"
-                value="1"
-              />
+              <span><?php echo $row['name']; ?></span>
+              <span>Default Style</span>
             </div>
             <div class="col5 desc-col">
               <span>total</span>
-              <span>R299.98</span>
+              <span>R <?php echo $row['price'];?></span>
             </div>
-          </li> -->
+          </li>
+          <?php } }?>
         </ul>
       </section>
       <section class="bill">
@@ -105,11 +98,11 @@
         </form>
         <div class="bill-item">
           <p>Shipping Cost</p>
-          <p id="shipping">R 0</p>
+          <p id="shipping">R 1.03</p>
         </div>
         <div class="bill-item">
           <p>Discount</p>
-          <p id="discount">-R 0</p>
+          <p id="discount">-R 20</p>
         </div>
         <div class="bill-item">
           <p>Tax</p>
@@ -117,9 +110,9 @@
         </div>
         <div class="bill-item bill-total">
           <p>Total</p>
-          <p id="total">R 0</p>
+          <p id="bill-total">R 0</p>
         </div>
-        <button class="checkout-button">
+        <button class="checkout-button" id="checkout-btn">
           <i class="fa-solid fa-lock"></i>
           Checkout
         </button>

@@ -237,20 +237,22 @@ input::placeholder {
 
 .cart-item {
   display: grid;
-  grid-template-columns: repeat(auto, 5);
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr;
   row-gap: 1rem;
   border: 1px solid var(--light-gray);
   padding: 0.5rem;
   border-radius: 5px;
-  grid-template-areas: "col1 col2 col3 col4 col5";
+  grid-template-areas: "col1 col2 col5";
 }
 
 @media (max-width: 550px) {
   .cart-item {
-    grid-template-columns: repeat(auto, 3);
-    grid-template-rows: repeat(auto, 2);
-    grid-template-areas: "col1 col2 col2" "col3 col4 col5";
+    display: flex;
+  }
+
+  .col5 {
+    display: static;
   }
 }
 
@@ -283,7 +285,15 @@ input::placeholder {
 
 .col2 {
   grid-area: col2;
-  margin-left: -2rem;
+  text-overflow: ellipsis;
+  white-space: none;
+  width: 100%;
+}
+
+.col2 > span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
 }
 
 .col2 :first-child {
@@ -293,24 +303,6 @@ input::placeholder {
 .col2 :nth-child(2) {
   margin-top: -0.4rem;
   font-size: 0.8rem;
-}
-
-.col3 {
-  grid-area: col3;
-}
-
-.col4 {
-  grid-area: col4;
-  margin-left: -1rem;
-}
-
-.col4 input {
-  width: 40px;
-}
-
-.col3 :nth-child(2),
-.col5 :nth-child(2) {
-  margin-top: 0.3rem;
 }
 
 .col5 {
