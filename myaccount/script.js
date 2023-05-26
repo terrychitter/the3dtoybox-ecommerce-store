@@ -141,3 +141,15 @@ setTimeout(() => {
     });
   });
 }, 6000);
+
+// Get the unordered list element
+const ulElement = document.querySelector("ul.scroller");
+
+// Check if the list has any list items
+if (ulElement.getElementsByTagName("li").length === 0) {
+  // Get the div element with the "no-items" class
+  const noItemsDiv = document.querySelector(".no-items");
+
+  // Displaying the no-items div
+  noItemsDiv.style.display = "flex";
+}

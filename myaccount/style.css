@@ -326,13 +326,13 @@ form > button[type="reset"] {
   min-height: 100px;
 }
 
-.no-orders {
+.no-items {
+  display: none;
   text-align: center;
   margin-top: 1rem;
 }
 
 .order-card {
-  aspect-ratio: 3/4;
   display: grid;
   grid-template-rows: auto 1fr auto;
   border: 1px solid var(--gray);
@@ -371,6 +371,7 @@ form > button[type="reset"] {
   list-style: none;
   margin: 0.5rem 1rem;
   overflow-y: auto;
+  max-height: 200px;
 }
 
 .order-card .total-footer {
@@ -409,13 +410,13 @@ form > button[type="reset"] {
 
 @media only screen and (max-width: 500px) {
   .scroller {
-    grid-auto-columns: 45%;
+    grid-auto-columns: 75%;
   }
 }
 
 @media only screen and (max-width: 350px) {
   .scroller {
-    grid-auto-columns: 55%;
+    grid-auto-columns: 85%;
   }
 }
 

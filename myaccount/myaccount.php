@@ -133,48 +133,36 @@
       </section>
       <section class="order-history" id="order-history">
         <h2>My Order History</h2>
-        <p class="no-orders">You have no orders in your history yet. Purchase some goodies to fill this area up!</p>
+        <p class="no-items">You have no orders in your history yet. Purchase some goodies to fill this area up!</p>
         <ul class="scroller">
-          <?php
-          require_once "../db_conn.php";
-          foreach ($_SESSION['orders'] as $key => $value) {
+        <?php // Getting all cart items
+            include '../db_conn.php';
+            $id = $_SESSION['id'];
+            $sql = "SELECT * FROM orders WHERE user_id='$id'";
+            $resultOrders = mysqli_query($conn, $sql);
 
-            // Preparing the query to get the total
-            $query = "SELECT total, order_date FROM orders WHERE order_id = $value";
-
-            // Execute the query and store the result in a variable
-            $result = mysqli_query($conn, $query);
-
-            // Check if the query was successful
-            if ($result) {
-                // Fetch the row from the result
-                $row = mysqli_fetch_assoc($result);
-                
-                // Access the 'total' column value from the fetched row
-                $total = $row['total'];
-                $date = $row['order_date'];
-            } else {
-                // Handle any errors that occurred during the query execution
-                echo "Error: " . mysqli_error($conn);
-            }
-            ?>
-          <li class="order-card">
+            while ($rowOrders = mysqli_fetch_assoc($resultOrders)) { ?>
+            <li class="order-card">
             <div class="order-card-head">
               <span class="order-num-label">order no.</span>
-              <span class="order-num">#<?php echo $value; ?></span>
-              <span class="order-date"><?php $dateString = strtotime($date); echo date("j M Y", $dateString);?></span>
+              <span class="order-num">#<?php echo $rowOrders['order_id']; ?></span>
+              <span class="order-date"><?php $dateString = strtotime($rowOrders['order_date']); echo date("j M Y", $dateString);?></span>
             </div>
             <ul class="order-items">
-              <li>1 x Figure</li>
-              <li>1 x Keyring</li>
-              <li>1 x Home Decor</li>
+              <?php $orderID = $rowOrders['order_id'];
+               $sql = "SELECT * FROM order_items WHERE order_id='$orderID'";
+                $resultsOrderItems = mysqli_query($conn, $sql);
+
+                while ($rowOrderItems = mysqli_fetch_assoc($resultsOrderItems)) {
+                  $product_id = $rowOrderItems['product_id']?>
+              <li style="margin-bottom: 0.5rem; font-size: 0.9rem;"><span style="margin-right: 1rem;">1 x</span><?php $sql = "SELECT name FROM products WHERE product_id='$product_id'"; echo mysqli_fetch_assoc(mysqli_query($conn, $sql))['name'];?></li> <?php } ?>
             </ul>
             <div class="total-footer">
               <span class="total-label">Total</span>
-              <span class="total"><?php echo $total; ?></span>
+              <span class="total"><?php echo $rowOrders['total']; ?></span>
             </div>
           </li>
-          <?php } ?>
+          <?php  }?>
         </ul>
       </section>
     </main>
