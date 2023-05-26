@@ -125,7 +125,7 @@ setTimeout(() => {
       div.remove(); // Remove the div from the DOM after animation is complete
     });
   });
-}, 6000);
+}, 3000);
 
 const errorDivs = document.querySelectorAll(".error");
 errorDivs.forEach((div) => {
@@ -140,7 +140,7 @@ setTimeout(() => {
       div.remove(); // Remove the div from the DOM after animation is complete
     });
   });
-}, 6000);
+}, 3000);
 
 // Get the unordered list element
 const ulElement = document.querySelector("ul.scroller");

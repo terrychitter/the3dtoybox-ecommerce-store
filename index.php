@@ -13,7 +13,8 @@
     <title>The 3DToyBox</title>
   </head>
   <body>
-    <?php include "header/header.php" ?>
+    <?php include "header/header.php";
+    include "popup/popup.php";?>
     <section class="hero"></section>
     <section class="categories">
       <h2>Search Categories</h2>

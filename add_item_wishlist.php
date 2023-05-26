@@ -14,6 +14,17 @@ mysqli_query($conn, $sql);
 $_SESSION['wishlist'][] = $productID;
 
 // Go back to the store page
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+// Get the referer URL
+$referer = $_SERVER['HTTP_REFERER'];
+
+// Remove existing parameters from the URL
+$refererParts = parse_url($referer);
+$newReferer = $refererParts['scheme'] . '://' . $refererParts['host'] . $refererParts['path'];
+
+// Add success parameter to the URL
+$newReferer .= '?success=Your item has been added to the wishlist';
+
+// Redirect to the new URL
+header('Location: ' . $newReferer);
 exit();
 ?>

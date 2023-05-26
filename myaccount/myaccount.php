@@ -104,12 +104,12 @@
           <?php if (isset($_GET['status'])) {
           if ($_GET['status'] == "address updated") { ?>
           <p class="warning update">Your Address has been successfully updated!</p>
-          <?php } ?>
+          <?php } } ?>
           <?php if ((!isset($_SESSION['house_no']) || $_SESSION['house_no'] === "") ||  (!isset($_SESSION['street_name']) || $_SESSION['street_name'] === "") ||
                 (!isset($_SESSION['suburb']) || $_SESSION['suburb'] === "") || (!isset($_SESSION['city']) || $_SESSION['city'] === "") ||
                 (!isset($_SESSION['province']) || $_SESSION['province'] === "") || (!isset($_SESSION['postal']) || $_SESSION['postal'] === "")) { ?>
           <p class="warning">Your address is incomplete. Complete the fields below to be able to buy items from the store and have them delivered!</p>
-          <?php } }?>
+          <?php }?>
           <label for="house-number">House Number</label>
           <input type="text" name="house-number" id="house-number" value="<?php echo $_SESSION['house_no']; ?>" />
 

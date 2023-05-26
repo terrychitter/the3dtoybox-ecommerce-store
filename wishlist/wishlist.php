@@ -13,7 +13,8 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <?php include "../header/header.php"; ?>
+    <?php include "../header/header.php";
+    include "../popup/popup.php";?>
     <main>
       <section class="wishlist-decor">
         <svg

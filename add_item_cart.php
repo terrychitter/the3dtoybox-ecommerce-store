@@ -10,18 +10,29 @@ require_once 'db_conn.php';
 $sql = "INSERT INTO cart_items (product_id, user_id, quantity) VALUES ($productID, $id, 1)";
 mysqli_query($conn, $sql);
 
-//Add the item from the sesion cart
+//Add the item to the sesion cart
 $_SESSION['cart'][] = $productID;
 
 // Remove the item from the user's wishlist
 $sql = "DELETE FROM wish_list_items WHERE product_id = '$productID' AND user_id = '$id'";
 mysqli_query($conn, $sql);
 
-//Remove the item from the sesion wishlist
+//Remove the item from the session wishlist
 $index = array_search($productID, $_SESSION['wishlist']);
 unset($_SESSION['wishlist'][$index]);
 
 // Go back to the store page
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+// Get the referer URL
+$referer = $_SERVER['HTTP_REFERER'];
+
+// Remove existing parameters from the URL
+$refererParts = parse_url($referer);
+$newReferer = $refererParts['scheme'] . '://' . $refererParts['host'] . $refererParts['path'];
+
+// Add success parameter to the URL
+$newReferer .= '?success=Your item has been added to the cart';
+
+// Redirect to the new URL
+header('Location: ' . $newReferer);
 exit();
 ?>
