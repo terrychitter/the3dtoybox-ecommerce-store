@@ -140,7 +140,11 @@
             <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
+                <i class="<?php if (isset($_SESSION['wishlist'])) {
+                  if (in_array($row['product_id'], $_SESSION['wishlist'])) {
+                    ?> fa-solid <?php } else  { echo "fa-regular"; }
+                    } else {?>fa-regular <?php } ?>
+                    fa-heart"></i>
               </div>
               <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
@@ -164,7 +168,7 @@
             <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
+              <i class="<?php if (isset($_SESSION['wishlist'])) { if (in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-solid <?php } } else {?>fa-regular <?php } ?> fa-heart"></i>
               </div>
               <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
@@ -188,7 +192,7 @@
             <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
+              <i class="<?php if (isset($_SESSION['wishlist'])) { if (in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-solid <?php } } else {?>fa-regular <?php } ?> fa-heart"></i>
               </div>
               <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
@@ -212,7 +216,7 @@
             <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
+              <i class="<?php if (isset($_SESSION['wishlist'])) { if (in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-solid <?php } } else {?>fa-regular <?php } ?> fa-heart"></i>
               </div>
               <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
@@ -236,7 +240,7 @@
             <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
+              <i class="<?php if (isset($_SESSION['wishlist'])) { if (in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-solid <?php } } else {?>fa-regular <?php } ?> fa-heart"></i>
               </div>
               <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
@@ -260,7 +264,7 @@
             <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
+              <i class="<?php if (isset($_SESSION['wishlist'])) { if (in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-solid <?php } } else {?>fa-regular <?php } ?> fa-heart"></i>
               </div>
               <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
@@ -284,7 +288,7 @@
             <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
+              <i class="<?php if (isset($_SESSION['wishlist'])) { if (in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-solid <?php } } else {?>fa-regular <?php } ?> fa-heart"></i>
               </div>
               <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">
@@ -308,7 +312,7 @@
             <li class="product-card" data-productId="<?php echo $row['product_id'] ?>">
               <img src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677" alt="<?php echo $row['name']; ?>">
               <div class="add-to-wishlist">
-                <i class="<?php if (!in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-regular <?php } else {?>fa-solid <?php } ?> fa-heart"></i>
+              <i class="<?php if (isset($_SESSION['wishlist'])) { if (in_array($row['product_id'], $_SESSION['wishlist'])) {?> fa-solid <?php } } else {?>fa-regular <?php } ?> fa-heart"></i>
               </div>
               <p class="product-name"><?php echo $row['name']; ?></p>
               <p class="product-desc">

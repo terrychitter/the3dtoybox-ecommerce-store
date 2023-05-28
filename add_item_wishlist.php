@@ -1,6 +1,24 @@
 <?php 
 session_start();
 
+// Returning an error if an account is not logged in
+if (!isset($_SESSION['id'])) {
+// Go back to the store page
+// Get the referer URL
+$referer = $_SERVER['HTTP_REFERER'];
+
+// Remove existing parameters from the URL
+$refererParts = parse_url($referer);
+$newReferer = $refererParts['scheme'] . '://' . $refererParts['host'] . $refererParts['path'];
+
+// Add success parameter to the URL
+$newReferer .= '?error=Sign in or Create an Account to add items to your Wishlist';
+
+// Redirect to the new URL
+header('Location: ' . $newReferer);
+exit();
+}
+
 // Removing the item from the user's wishlist
 $id = $_SESSION['id'];
 $productID = $_GET['product_id'];
