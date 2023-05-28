@@ -309,17 +309,14 @@ section > h2 {
 }
 
 .product-card > img {
-  width: 100%;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
 }
 
 @media only screen and (max-width: 400px) {
-  .product-card > img {
-    height: 125px;
-  }
-
   .product-card {
-    min-height: 300px;
+    height: 400px;
   }
 }
 

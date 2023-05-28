@@ -63,7 +63,7 @@
             while ($row = mysqli_fetch_assoc($result)) { ?>
             <li class="cart-item" data-productID="<?php echo $row['product_id']; ?>">
             <div class="col1">
-              <img src="" alt="" />
+              <img src="../product_images/<?php echo $row['product_id']?>.png" loading="lazy" />
               <div class="cart-item-actions">
                 <i
                   class="fa-solid fa-trash fa-lg"

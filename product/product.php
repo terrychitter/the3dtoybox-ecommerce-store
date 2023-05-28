@@ -31,7 +31,7 @@
     <main>
       <section class="product-img">
         <img
-          src="https://media.discordapp.net/attachments/1085644871508971680/1097870354766114837/terryc_2_cute_cats_sitting_innocently_cheeks_full_of_food_larfe_9716cf63-74de-4603-922a-b24273e474e0.png?width=677&height=677"
+        src="../product_images/<?php echo $row['product_id']?>.png" loading="lazy"
           alt="product"
         />
         <div class="share">
