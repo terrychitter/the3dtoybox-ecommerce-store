@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>THE3DToyBox - Sign In</title>
-    <style></style>
+    <script src="../removeParams.js"></script>
     <script defer src="script.js"></script>
   </head>
   <body>

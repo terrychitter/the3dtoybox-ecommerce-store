@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wishlist</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="../removeParams.js"></script>
     <script
       src="https://kit.fontawesome.com/805e2252e6.js"
       crossorigin="anonymous"

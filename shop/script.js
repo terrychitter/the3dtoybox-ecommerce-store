@@ -51,8 +51,16 @@ productCards.forEach((productCard) => {
   // Check the initial class of the heart icon
   const isRegularHeart = heartIcon.classList.contains("fa-regular");
 
+  // Add a click event listener to the product card
+  productCard.addEventListener("click", () => {
+    // Navigate to the product page with the corresponding product ID
+    window.location.href = "../product/product.php?product_id=" + productId;
+  });
+
   // Add a click event listener to the heart icon
-  heartIcon.addEventListener("click", () => {
+  heartIcon.addEventListener("click", (event) => {
+    event.stopPropagation(); // Stop event propagation
+
     // Check the updated class of the heart icon
     const isRegularHeartNow = heartIcon.classList.contains("fa-regular");
 
@@ -72,11 +80,13 @@ productCards.forEach((productCard) => {
     }
   });
 
-  //Get all the add-to-cart buttons
+  // Get all the add-to-cart buttons
   const addToCartButtons = productCard.querySelectorAll(".add-to-cart");
-  // Attach an event listener to each of add to cart button
+  // Attach an event listener to each of the add to cart button
   addToCartButtons.forEach((addToCartButton) => {
     addToCartButton.addEventListener("click", (event) => {
+      event.stopPropagation(); // Stop event propagation
+
       // Use the captured productId from the closure
       const clickedProductId = productId;
       window.location.href =

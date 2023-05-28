@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/805e2252e6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../removeParams.js"></script>
     <script src="script.js" defer></script>
   </head>
   <body>

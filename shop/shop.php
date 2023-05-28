@@ -9,6 +9,7 @@
       <script src="script.js" defer></script>
     </head>
     <body>
+    <script src="../removeParams.js"></script>
       <script
         src="https://kit.fontawesome.com/805e2252e6.js"
         crossorigin="anonymous"
