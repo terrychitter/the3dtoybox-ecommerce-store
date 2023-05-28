@@ -7,7 +7,7 @@
     <title>Product Name</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <script src="../removeParams.js"></script>
+    <script src="../removeParams.js" defer></script>
     <script
       src="https://kit.fontawesome.com/805e2252e6.js"
       crossorigin="anonymous"
@@ -15,10 +15,10 @@
   </head>
   <body>
     <?php
-    if (!isset($_GET['product_id'])) {
-      header("Location: ../index.php?error=An unexpected error occured");
-      exit();
-    }
+     if (!isset($_GET['product_id'])) {
+       header("Location: ../index.php?error=No Item ID");
+       exit();
+     }
     include "../header/header.php";
     include "../popup/popup.php";
     // Get the item
