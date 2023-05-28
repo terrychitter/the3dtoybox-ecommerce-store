@@ -151,7 +151,7 @@
               <p class="product-desc">
                 <?php echo $row['description']; ?>
               </p>
-              <p class="product-price">
+              <p class="product-price">R 
                 <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
@@ -179,7 +179,7 @@
               <p class="product-desc">
                 <?php echo $row['description']; ?>
               </p>
-              <p class="product-price">
+              <p class="product-price">R 
                 <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
@@ -207,7 +207,7 @@
               <p class="product-desc">
                 <?php echo $row['description']; ?>
               </p>
-              <p class="product-price">
+              <p class="product-price">R 
                 <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
@@ -235,7 +235,7 @@
               <p class="product-desc">
                 <?php echo $row['description']; ?>
               </p>
-              <p class="product-price">
+              <p class="product-price">R 
                 <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
@@ -263,7 +263,7 @@
               <p class="product-desc">
                 <?php echo $row['description']; ?>
               </p>
-              <p class="product-price">
+              <p class="product-price">R 
                 <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
@@ -291,7 +291,7 @@
               <p class="product-desc">
                 <?php echo $row['description']; ?>
               </p>
-              <p class="product-price">
+              <p class="product-price">R
                 <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
@@ -319,7 +319,7 @@
               <p class="product-desc">
                 <?php echo $row['description']; ?>
               </p>
-              <p class="product-price">
+              <p class="product-price">R 
                 <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>
@@ -347,7 +347,7 @@
               <p class="product-desc">
                 <?php echo $row['description']; ?>
               </p>
-              <p class="product-price">
+              <p class="product-price">R 
                 <?php echo $row['price']; ?>
               </p>
               <button class="add-to-cart">Add to Cart</button>

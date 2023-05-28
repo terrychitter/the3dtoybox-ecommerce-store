@@ -177,6 +177,7 @@ button:hover i {
 
 .row-1 > h1 {
   flex-grow: 0.7;
+  padding-right: 0.5rem;
 }
 
 .row-1 i {
@@ -201,7 +202,6 @@ hr {
 .product-desc {
   color: rgb(49, 49, 49);
   font-style: italic;
-  text-align: justify;
   height: 200px;
 }
 

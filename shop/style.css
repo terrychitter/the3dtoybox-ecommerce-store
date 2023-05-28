@@ -366,7 +366,7 @@ section > h2 {
   width: 100%;
   color: gold;
   left: 50%;
-  bottom: 9%;
+  bottom: 2rem;
   transform: translateX(-50%);
   text-align: center;
 }
