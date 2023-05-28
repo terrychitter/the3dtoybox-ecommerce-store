@@ -75,8 +75,8 @@
           class="personal-form editable-form"
         >
           <h2>Personal Information</h2>
-          <?php if (isset($_GET['status'])) {
-          if ($_GET['status'] == "personal updated") { ?>
+          <?php if (isset($_GET['success'])) {
+          if ($_GET['success'] == "personal updated") { ?>
           <p class="warning update">Your Personal Info has been successfully updated!</p>
           <?php } } ?>
           <?php if (isset($_GET['error'])) {
@@ -102,8 +102,8 @@
           class="address-form editable-form"
         >
           <h2>Address Information</h2>
-          <?php if (isset($_GET['status'])) {
-          if ($_GET['status'] == "address updated") { ?>
+          <?php if (isset($_GET['success'])) {
+          if ($_GET['success'] == "address updated") { ?>
           <p class="warning update">Your Address has been successfully updated!</p>
           <?php } } ?>
           <?php if ((!isset($_SESSION['house_no']) || $_SESSION['house_no'] === "") ||  (!isset($_SESSION['street_name']) || $_SESSION['street_name'] === "") ||

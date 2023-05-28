@@ -24,7 +24,7 @@ if (!isset($_POST)) {
     } else {
         $_SESSION['username'] = $newUsername;
 
-        header("Location: myaccount.php?status=username updated");
+        header("Location: myaccount.php?success=username updated");
         exit();
     }
 }

@@ -45,6 +45,6 @@ if (!isset($_POST)) {
     $_SESSION['province'] = $newProvince;
     $_SESSION['postal'] = $newPostal;
 
-    header("Location: myaccount.php?status=address updated");
+    header("Location: myaccount.php?success=address updated");
     exit();
 }

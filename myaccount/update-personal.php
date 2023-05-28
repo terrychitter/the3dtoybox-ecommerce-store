@@ -47,6 +47,6 @@ if (!isset($_POST)) {
     $result = mysqli_query($conn, $sql);
     $_SESSION['phone'] = $newPhone;
 
-    header("Location: myaccount.php?status=personal updated");
+    header("Location: myaccount.php?success=personal updated");
     exit();
 }
