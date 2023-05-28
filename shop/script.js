@@ -49,12 +49,12 @@ productCards.forEach((productCard) => {
   const productId = productCard.getAttribute("data-productId");
 
   // Check the initial class of the heart icon
-  const isRegularHeart = heartIcon.classList.contains("fa-regular"); //false
+  const isRegularHeart = heartIcon.classList.contains("fa-regular");
 
   // Add a click event listener to the heart icon
   heartIcon.addEventListener("click", () => {
     // Check the updated class of the heart icon
-    const isRegularHeartNow = heartIcon.classList.contains("fa-regular"); //false
+    const isRegularHeartNow = heartIcon.classList.contains("fa-regular");
 
     // Add or remove the productId from the wishlist array
     if (isRegularHeartNow) {

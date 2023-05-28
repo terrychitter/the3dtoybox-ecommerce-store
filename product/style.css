@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Overpass&display=swap");
+
+:root {
+  --grain: #d7cec7;
+  --blackboard: #565656;
+  --oxblood: #76323f;
+  --tan: #c09f80;
+  --banana: rgb(252, 239, 169);
+  --light-gray: rgb(233, 233, 233);
+  --gray: rgb(212, 212, 212);
+}
+
+::selection {
+  background-color: gold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.04rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+i {
+  color: var(--blackboard);
+  cursor: pointer;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  background: url("https://media.discordapp.net/attachments/1085644871508971680/1103343395163885578/terryc_visual_effects_doodle_style_minimalistic_white_c3e62385-d02e-485b-b828-8d20e351f2c2.png?width=677&height=677");
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+  z-index: -999;
+}
+
+main {
+  display: grid;
+  margin: 10px auto;
+  padding-inline: 1rem;
+  gap: 1.5rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "product-img product-details";
+}
+
+@media only screen and (min-width: 900px) {
+  main {
+    max-width: 1000px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "product-img" "product-details";
+  }
+}
+
+main > * {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+  padding: 0.7rem;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
+}
+
+button {
+  color: #fff;
+  background-color: #ffd700;
+  padding: 10px;
+  border: solid #ffd700 1px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 12px;
+  transition: 375ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+button:hover {
+  transition: 375ms;
+  padding: 12px;
+  background-color: #fff;
+  color: #ffd700;
+  border: solid 1px #ffd700;
+}
+
+button.remove {
+  color: #fff;
+  background-color: crimson;
+  border: solid crimson 1px;
+}
+
+button.remove:hover {
+  background-color: #fff;
+  color: crimson;
+  border: solid 1px crimson;
+}
+
+button i {
+  transition: 375ms;
+  color: white;
+}
+
+button:hover i {
+  transition: 375ms;
+  color: gold;
+}
+
+.product-img {
+  grid-area: product-img;
+  position: relative;
+}
+
+.product-img img {
+  width: 100%;
+}
+
+.share {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 100vw;
+  background-color: rgba(255, 255, 255, 0.466);
+  padding: 0.5rem 0.4rem 0.4rem 0.4rem;
+  box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.19);
+}
+
+.share i {
+  color: rgb(0, 0, 0);
+}
+
+.product-details {
+  grid-area: product-details;
+  position: relative;
+  padding: 2rem;
+}
+
+.row-1 {
+  display: flex;
+  align-items: center;
+}
+
+.row-1 > h1 {
+  flex-grow: 0.7;
+}
+
+.row-1 i {
+  margin-top: -8px;
+}
+
+hr {
+  color: black;
+  width: 20%;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 2rem;
+}
+
+.price {
+  color: gold;
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.product-desc {
+  color: rgb(49, 49, 49);
+  font-style: italic;
+  text-align: justify;
+  height: 200px;
+}
+
+.add-to-cart {
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+  width: calc(100% - 4rem);
+  display: flex;
+  gap: 1rem;
+}

@@ -44,14 +44,21 @@ unset($_SESSION['wishlist'][$index]);
 // Get the referer URL
 $referer = $_SERVER['HTTP_REFERER'];
 
-// Remove existing parameters from the URL
-$refererParts = parse_url($referer);
-$newReferer = $refererParts['scheme'] . '://' . $refererParts['host'] . $refererParts['path'];
+// Check if the referer has the "product_id" parameter
+if (strpos($referer, 'product_id=') !== false) {
+  // If the "product_id" parameter is present, preserve only the "product_id" parameter
+  $refererParts = parse_url($referer);
+  $newReferer = $refererParts['scheme'] . '://' . $refererParts['host'] . $refererParts['path'] . '?product_id=' . $_GET['product_id'];
+} else {
+  // If the "product_id" parameter is not present, remove all existing parameters
+  $newReferer = $referer;
+}
 
 // Add success parameter to the URL
-$newReferer .= '?success=Your item has been added to the cart';
+$newReferer .= (strpos($newReferer, '?') === false ? '?' : '&') . 'success=Your item has been added to the cart';
 
 // Redirect to the new URL
 header('Location: ' . $newReferer);
 exit();
+
 ?>
