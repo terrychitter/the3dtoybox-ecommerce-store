@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Succcessful</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Overpass&display=swap");
+
+      :root {
+        --grain: #d7cec7;
+        --blackboard: #565656;
+        --oxblood: #76323f;
+        --tan: #c09f80;
+        --banana: rgb(252, 239, 169);
+        --light-gray: rgb(233, 233, 233);
+        --gray: rgb(212, 212, 212);
+      }
+
+      ::selection {
+        background-color: gold;
+      }
+
+      html {
+        height: 100vh;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Overpass", sans-serif;
+        font-size: 1.04rem;
+      }
+
+      h1 {
+        font-family: "Josefin Sans", sans-serif;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      i {
+        color: var(--blackboard);
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding-inline: 1rem;
+      }
+
+      body::before {
+        content: "";
+        background: url("https://media.discordapp.net/attachments/1085644871508971680/1097570295260389407/terryc_toys_doodle_style_yellow_8019458a-59bf-4e82-860d-49cb6ee8ac0c.png?width=677&height=677");
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        z-index: -999;
+      }
+
+      main {
+        border-radius: 10px;
+        border: 1px solid var(--light-gray);
+        text-align: center;
+        background-color: white;
+        padding: 2rem;
+        width: 500px;
+        box-shadow: 10px 10px 11px -5px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 10px 10px 11px -5px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 10px 10px 11px -5px rgba(0, 0, 0, 0.3);
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      button {
+        color: #fff;
+        background-color: #ffd700;
+        padding: 10px;
+        border: solid #ffd700 1px;
+        box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+        border-radius: 12px;
+        transition: 375ms;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        margin: auto;
+        margin-top: 1rem;
+        font-size: 1.4rem;
+      }
+
+      button:hover {
+        transition: 375ms;
+        padding: 12px;
+        background-color: #fff;
+        color: #ffd700;
+        border: solid 1px #ffd700;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="3 3 16 16"
+        width="120px"
+        height="120px"
+      >
+        <defs>
+          <linearGradient
+            gradientUnits="userSpaceOnUse"
+            y2="-2.623"
+            x2="0"
+            y1="986.67"
+            id="0"
+          >
+            <stop stop-color="#ffce3b" />
+            <stop offset="1" stop-color="#ffd762" />
+          </linearGradient>
+          <linearGradient
+            y2="-2.623"
+            x2="0"
+            y1="986.67"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#ffce3b" />
+            <stop offset="1" stop-color="#fef4ab" />
+          </linearGradient>
+        </defs>
+        <g
+          transform="matrix(1.99997 0 0 1.99997-10.994-2071.68)"
+          fill="#da4453"
+        >
+          <rect y="1037.36" x="7" height="8" width="8" fill="#32c671" rx="4" />
+          <path
+            d="m123.86 12.966l-11.08-11.08c-1.52-1.521-3.368-2.281-5.54-2.281-2.173 0-4.02.76-5.541 2.281l-53.45 53.53-23.953-24.04c-1.521-1.521-3.368-2.281-5.54-2.281-2.173 0-4.02.76-5.541 2.281l-11.08 11.08c-1.521 1.521-2.281 3.368-2.281 5.541 0 2.172.76 4.02 2.281 5.54l29.493 29.493 11.08 11.08c1.52 1.521 3.367 2.281 5.54 2.281 2.172 0 4.02-.761 5.54-2.281l11.08-11.08 58.986-58.986c1.52-1.521 2.281-3.368 2.281-5.541.0001-2.172-.761-4.02-2.281-5.54"
+            fill="#fff"
+            transform="matrix(.0436 0 0 .0436 8.177 1039.72)"
+            stroke="none"
+            stroke-width="9.512"
+          />
+        </g>
+      </svg>
+      <h1>
+        Payment <br />
+        Successful
+      </h1>
+      <p>You can safely close this tab</p>
+      <a href="shop/shop.php"><button>Go Home</button></a>
+    </main>
+  </body>
+</html>

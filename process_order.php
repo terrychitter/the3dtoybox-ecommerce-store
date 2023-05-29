@@ -47,5 +47,6 @@ $stmt->execute();
 $stmt->close();
 $conn->close();
 
-echo "Order Successful";
+header("Location: payment_success.html");
+
 ?>

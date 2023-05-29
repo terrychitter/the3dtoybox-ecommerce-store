@@ -191,12 +191,12 @@ section > h2 {
 }
 
 .categories > ul > li.new-category {
-  background: linear-gradient(285deg, #f60008, #ffd700, #89eb7f, #a361db);
-  background-size: 240% 240%;
-  animation: gradient-animation 12s ease infinite;
+  background: linear-gradient(-45deg, orange, crimson, gold, yellow);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
 }
 
-@keyframes gradient-animation {
+@keyframes gradient {
   0% {
     background-position: 0% 50%;
   }

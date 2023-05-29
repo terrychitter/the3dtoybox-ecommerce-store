@@ -83,21 +83,21 @@
             <ul data-slides>
               <li class="promotional-slide" data-active>
                 <img
-                  src="https://dummyimage.com/1920x1080/000/ffffff.png&text=Image+1"
+                  src="../product_images/promotions/1.png"
                   alt=""
                   class="promotion-img"
                 />
               </li>
               <li class="promotional-slide">
                 <img
-                  src="https://dummyimage.com/1920x1080/000/ffffff.png&text=Image+2"
+                  src="../product_images/promotions/2.png"
                   alt=""
                   class="promotion-img"
                 />
               </li>
               <li class="promotional-slide">
                 <img
-                  src="https://dummyimage.com/1920x1080/000/ffffff.png&text=Image+3"
+                  src="../product_images/promotions/3.png"
                   alt=""
                   class="promotion-img"
                 />
