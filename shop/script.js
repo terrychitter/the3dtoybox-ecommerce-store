@@ -94,3 +94,32 @@ productCards.forEach((productCard) => {
     });
   });
 });
+
+// Get all the <li> elements within the <ul> element
+const liElements = document.querySelectorAll("ul li");
+
+// Add a click event listener to each <li> element
+liElements.forEach(function (li) {
+  li.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    // Get the link within the clicked <li> element
+    const link = li.querySelector("a");
+
+    // Get the target section based on the link's href attribute
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    // Calculate the offset to center the target section
+    const windowHeight = window.innerHeight;
+    const targetOffset = targetSection.offsetTop;
+    const targetHeight = targetSection.offsetHeight;
+    const scrollToPosition = targetOffset - (windowHeight - targetHeight) / 2;
+
+    // Scroll to the target section
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: "smooth",
+    });
+  });
+});

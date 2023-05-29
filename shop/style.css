@@ -60,8 +60,8 @@ main {
   justify-items: center;
   align-items: center;
   grid-template-columns: 1.25fr 1fr 1.15fr;
-  grid-template-rows: 0.5fr minmax(0, 2fr) repeat(auto, 9);
-  grid-template-areas: "search search search" "categories sales sales" "brands brands news" "new new news" "featured featured news" "mini-figures mini-figures news" "Collectibles Collectibles news" "keychains keychains news" "home-decor home-decor news" "pins pins news" "toys toys news";
+  grid-template-rows: minmax(0, 2fr) repeat(auto, 9);
+  grid-template-areas: "categories sales sales" "brands brands news" "new new news" "featured featured featured" "mini-figures mini-figures mini-figures" "Collectibles Collectibles Collectibles" "keychains keychains keychains" "home-decor home-decor home-decor" "pins pins pins" "toys toys toys";
 }
 
 @media only screen and (min-width: 900px) {
@@ -80,76 +80,6 @@ main > * {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.49);
-}
-
-.search {
-  grid-area: search;
-}
-
-.search {
-  width: 100%;
-  height: auto;
-  display: flex;
-  gap: 1rem;
-}
-
-@media screen and (max-width: 400px) {
-  .search {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-.search-form {
-  width: 100%;
-}
-
-.searchbar {
-  width: 100%;
-  display: inline-flex;
-}
-
-.searchbar > input {
-  flex-grow: 1;
-  padding: 0.5rem;
-  border: 1px solid gold;
-  outline: none;
-  transition: box-shadow 0.25s;
-  border-radius: 5px 0 0 5px;
-}
-
-.searchbar > input:focus {
-  box-shadow: 0 0 2px var(--banana);
-  border: 1px solid gold;
-}
-
-.searchbar > input::placeholder {
-  color: rgb(94, 94, 94);
-}
-
-.searchbar > button {
-  width: 40px;
-  background: gold;
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  user-select: none;
-}
-
-.searchbar > button > i {
-  color: var(--blackboard);
-}
-
-.see-all {
-  background-color: gold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 110px;
 }
 
 .categories {
@@ -421,7 +351,6 @@ button.add-to-cart {
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto;
     grid-template-areas:
-      "search"
       "categories"
       "sales"
       "brands"

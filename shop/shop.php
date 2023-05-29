@@ -9,7 +9,7 @@
       <script src="script.js" defer></script>
     </head>
     <body>
-    <script src="../removeParams.js"></script>
+    <!-- <script src="../removeParams.js" defer></script> -->
       <script
         src="https://kit.fontawesome.com/805e2252e6.js"
         crossorigin="anonymous"
@@ -17,57 +17,39 @@
       <?php include "../header/header.php";
       include "../popup/popup.php";?>
       <main>
-        <div id="search" class="search">
-          <form action="" method="get" class="search-form">
-            <div class="searchbar">
-              <input
-                type="text"
-                name="search"
-                id="search"
-                placeholder="Search products"
-              />
-              <button type="submit">
-                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-              </button>
-            </div>
-          </form>
-          <button class="see-all">
-            See All<i class="fa-solid fa-angles-right fa-lg"></i>
-          </button>
-        </div>
         <div id="categories" class="categories">
-          <h2>Search Categories</h2>
+          <h2>Go to Category</h2>
           <ul>
             <li class="new-category">
-              <a href="">New</a>
+              <a href="#new">New</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
             <li class="featured-category">
-              <a href="">Featured</a>
+              <a href="#featured">Featured</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
             <li>
-              <a href="">Miniature-Figurines</a>
+              <a href="#mini-figures">Miniature-Figurines</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
             <li>
-              <a href="">Collectibles</a>
+              <a href="#collectibles">Collectibles</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
             <li>
-              <a href="">Keychains</a>
+              <a href="#keychains">Keychains</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
             <li>
-              <a href="">Home Decor</a>
+              <a href="#home-decor">Home Decor</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
             <li>
-              <a href="">Pins</a>
+              <a href="#pins">Pins</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
             <li>
-              <a href="">Toys</a>
+              <a href="#toys">Toys</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
           </ul>
@@ -214,7 +196,7 @@
             </li><?php } ?>
           </ul>
         </section>
-        <section id="Collectibles" class="category-group Collectibles">
+        <section id="collectibles" class="category-group Collectibles">
           <h2>Collectibles</h2>
           <ul class="scroller product-scroller">
           <?php // Getting all collectible products
@@ -354,7 +336,10 @@
             </li><?php } ?>
           </ul>
         </section>
-        <div id="news" class="news">News</div>
+        <div id="news" class="news">
+          <h2>News</h2>
+          <p>No current news</p>
+        </div>
       </main>
       <?php include "../footer/footer.php" ?>
     </body>
