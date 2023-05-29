@@ -100,11 +100,11 @@
         </form>
         <div class="bill-item">
           <p>Shipping Cost</p>
-          <p id="shipping">R 1.03</p>
+          <p id="shipping">R 20</p>
         </div>
         <div class="bill-item">
           <p>Discount</p>
-          <p id="discount">-R 20</p>
+          <p id="discount">-R 0</p>
         </div>
         <div class="bill-item">
           <p>Tax</p>
