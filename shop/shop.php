@@ -83,21 +83,21 @@
             <ul data-slides>
               <li class="promotional-slide" data-active>
                 <img
-                  src="../product_images/promotions/1.png"
+                  src="https://media.discordapp.net/attachments/1085644871508971680/1112797089534062643/1.png?width=790&height=395"
                   alt=""
                   class="promotion-img"
                 />
               </li>
               <li class="promotional-slide">
                 <img
-                  src="../product_images/promotions/2.png"
+                  src="https://media.discordapp.net/attachments/1085644871508971680/1112797090389696562/2.png?width=790&height=395"
                   alt=""
                   class="promotion-img"
                 />
               </li>
               <li class="promotional-slide">
                 <img
-                  src="../product_images/promotions/3.png"
+                  src="https://media.discordapp.net/attachments/1085644871508971680/1112797091245338706/3.png?width=790&height=395"
                   alt=""
                   class="promotion-img"
                 />
