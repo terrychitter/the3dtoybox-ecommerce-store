@@ -56,7 +56,7 @@
             <div class="col1">
               <div class="col1-col1">
                 <i class="fa-solid fa-trash fa-lg"></i>
-                <img src="" alt="" />
+                <img src="../product_images/<?php echo $row['product_id'];?>.png" alt="" />
               </div>
               <div class="col1-col2">
                 <p><?php echo $row['name']; ?></p>

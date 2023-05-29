@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Name</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <script src="../removeParams.js" defer></script>
@@ -28,6 +27,11 @@
     $sql = "SELECT * FROM products WHERE product_id='$productId'";
     $row = mysqli_fetch_assoc(mysqli_query($conn, $sql));
     ?>
+    <title><?php echo $row['name']; ?></title>
+    <meta property="og:title" content="<?php echo $row['name']; ?>" />
+    <meta property="og:description" content="<?php echo $row['description']; ?>" />
+    <meta property="og:image" content="../product_images/<?php echo $row['product_id']; ?>.png" />
+    <meta property="og:url" content="product.php?product_id= <?php echo $product_id;?>" />
     <main>
       <section class="product-img">
         <img
