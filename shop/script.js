@@ -95,8 +95,8 @@ productCards.forEach((productCard) => {
   });
 });
 
-// Get all the <li> elements within the <ul> element
-const liElements = document.querySelectorAll("ul li");
+// Get all the <li> elements within the "categories" div
+const liElements = document.querySelectorAll("#categories li.li-category");
 
 // Add a click event listener to each <li> element
 liElements.forEach(function (li) {

@@ -20,35 +20,35 @@
         <div id="categories" class="categories">
           <h2>Go to Category</h2>
           <ul>
-            <li class="new-category">
+            <li class="new-category li-category">
               <a href="#new">New</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
-            <li class="featured-category">
+            <li class="li-category">
               <a href="#featured">Featured</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
-            <li>
+            <li class="li-category">
               <a href="#mini-figures">Miniature-Figurines</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
-            <li>
+            <li class="li-category">
               <a href="#collectibles">Collectibles</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
-            <li>
+            <li class="li-category">
               <a href="#keychains">Keychains</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
-            <li>
+            <li class="li-category">
               <a href="#home-decor">Home Decor</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
-            <li>
+            <li class="li-category">
               <a href="#pins">Pins</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
-            <li>
+            <li class="li-category">
               <a href="#toys">Toys</a>
               <i class="fa-solid fa-chevron-right"></i>
             </li>
