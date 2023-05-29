@@ -310,8 +310,6 @@ button.add-to-cart {
 
 .new {
   grid-area: new;
-  display: flex;
-  flex-direction: column;
 }
 
 .featured {
