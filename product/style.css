@@ -154,14 +154,18 @@ button:hover i {
   top: 20px;
   border-radius: 100vw;
   background-color: rgba(255, 255, 255, 0.466);
-  padding: 0.5rem 0.4rem 0.4rem 0.4rem;
-  box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.19);
+  padding: 0.4rem;
+  box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.35);
 }
 
 .share i {
   color: rgb(0, 0, 0);
+}
+
+.fa-share-nodes:before {
+  right: 5px !important;
 }
 
 .product-details {

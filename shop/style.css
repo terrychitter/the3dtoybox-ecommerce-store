@@ -336,8 +336,10 @@ section > h2 {
 }
 
 .add-to-wishlist i {
-  margin-left: 0px;
-  margin-top: 3px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
   color: red;
 }
 
