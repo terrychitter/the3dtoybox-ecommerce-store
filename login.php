@@ -41,6 +41,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['city'] = $row['city'];
                 $_SESSION['province'] = $row['province'];
                 $_SESSION['postal'] = $row['postal_code'];
+                $_SESSION['is_admin'] = $row['is_admin'];
 
                 // Retrieving orders from the database
                 $sql  = "SELECT order_id FROM orders WHERE user_id='{$_SESSION['id']}'";
