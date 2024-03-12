@@ -4,6 +4,22 @@
 
 **Note: This site is not ready for production and is simply an assignment submission [dated 14/06/2023]**
 
+## Table of Contents
+- [The 3DToyBox E-commerce store](#the-3dtoybox-e-commerce-store)
+   * [Introduction](#introduction)
+      + [Background](#background)
+      + [About this Website](#about-this-website)
+   * [Basics: Accesing the Website and Admin Page](#basics-accesing-the-website-and-admin-page)
+      + [Accessing the Website](#accessing-the-website)
+         - [Customer Access](#customer-access)
+            * [Creating an Account](#creating-an-account)
+            * [Signing into an Existing Account](#signing-into-an-existing-account)
+         - [Administrator Access](#administrator-access)
+      + [The Admin Area](#the-admin-area)
+   * [Products: Adding, and Removing Products](#products-adding-and-removing-products)
+      + [Adding Products](#adding-products)
+      + [Deleting Products](#deleting-products)
+
 ## Introduction
 ### Background
 The 3DToyBox is a new 3D printing business that specializes in printing and selling mini collectables. In response to the growing demand for unique and customizable collectibles, Previously, the store has been marketing and selling their products via the Facebook marketplace, however, the owner realized that as the business grows this will not be a reliable way to sell their collectables.
