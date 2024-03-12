@@ -1,6 +1,8 @@
 # The 3DToyBox E-commerce store
 
-<b>Note: This site is not ready for production and is simply an assignment submission [dated 14/06/2023]</b>
+<img src="https://i.ibb.co/BrwS5Gc/logo-banner.png" width="100%">
+
+**Note: This site is not ready for production and is simply an assignment submission [dated 14/06/2023]**
 
 ## Introduction
 ### Background
