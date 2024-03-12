@@ -6,6 +6,7 @@
 
 ## Table of Contents
 - [The 3DToyBox E-commerce store](#the-3dtoybox-e-commerce-store)
+   * [Table of Contents](#table-of-contents)
    * [Introduction](#introduction)
       + [Background](#background)
       + [About this Website](#about-this-website)
@@ -19,6 +20,12 @@
    * [Products: Adding, and Removing Products](#products-adding-and-removing-products)
       + [Adding Products](#adding-products)
       + [Deleting Products](#deleting-products)
+   * [Contributing](#contributing)
+      + [Issues and Bugs](#issues-and-bugs)
+      + [Feature Requests](#feature-requests)
+      + [Pull Requests](#pull-requests)
+   * [License](#license)
+   * [Contact Information](#contact-information)
 
 ## Introduction
 ### Background
@@ -124,3 +131,38 @@ From the Admin Page, administrators also have the option to delete products from
 </p>
 
 <img src="https://i.ibb.co/XFxZLg1/successful-product-delete.png" width="100%">
+
+## Contributing
+Contributions from the community are most welcomed! Whether it's reporting a bug, submitting a feature request, or improving the documentation, your help is appreciated. To contribute to this project, please follow these guidelines:
+
+### Issues and Bugs
+If you encounter any issues or find a bug, please check the existing issues to see if it has already been reported. If not, please open a new issue, including the following details:
+
+- A clear and descriptive title.
+- A detailed description of the issue, including steps to reproduce.
+- Screenshots or code snippets, if applicable.
+- Information about your environment (operating system, browser, etc.).
+
+### Feature Requests
+You are welcome to suggest new features or improvements. Before submitting a feature request, please:
+- Check the existing feature requests to avoid duplicates.
+- Provide a clear and detailed description of the proposed feature.
+- Discuss the feature with the community to gather feedback.
+
+### Pull Requests
+Pull requests for bug fixes, new features, and improvements are welcomed as well. To submit a pull request, follow these steps:
+
+- Fork the repository and create a new branch for your contribution.
+- Write clear and comprehensive commit messages.
+- Test your changes thoroughly.
+- Submit a pull request, referencing the relevant issue (if applicable).
+- Be prepared to address feedback and iterate on your changes.
+
+By contributing to this project, you agree that your contributions will be licensed under the project's license.
+Thank you for contributing to the project! 🚀
+
+## License
+This project makes use of the [MIT License](LICENSE.md)
+
+## Contact Information
+For any questions and support, contact me at t.sikenaris@gmail.com
